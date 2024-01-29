@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import { useRouter } from 'next/navigation'
+import './styles.css'
 const InstructorList = () => {
   const router = useRouter()
   const [anchorEl, setAnchorEl] = useState(null)
@@ -101,7 +102,7 @@ const InstructorList = () => {
                 type='button'
                 onClick={(e) => handleClick(e, tableMeta.rowIndex)}
               >
-                <MoreVertIcon />
+                <MoreVertIcon sx={{ color: '#f23d4d' }} />
               </Button>
               {activeRow === tableMeta.rowIndex ? (
                 <Menu
@@ -133,7 +134,7 @@ const InstructorList = () => {
   ]
   const HeaderElements = () => {
     return (
-      <Button type='button' onClick={handleAddBook}>
+      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddBook}>
         + Add Instructor
       </Button>
     )
@@ -142,7 +143,14 @@ const InstructorList = () => {
   const options = {
     filterType: 'checkbox' as const,
     customToolbar: HeaderElements,
+    headCells: {
+      style: {
+        fontWeight: 'bold !important',
+        color: 'black !important',
+      },
+    },
     print: false,
+    filter: false,
   }
 
   return (
