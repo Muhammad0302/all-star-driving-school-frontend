@@ -22,8 +22,8 @@ const InstructorList = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const handleAddBook = () => {
-    router.push('/addbook')
+  const handleAddInstructor = () => {
+    router.push('/addinstructor')
   }
   const data = [
     [1, 'John Doe', '123-456-7890', 'DL-12345', 'DI-67890'],
@@ -114,7 +114,7 @@ const InstructorList = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem onClick={handleAddBook}>
+                  <MenuItem onClick={handleAddInstructor}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -134,7 +134,7 @@ const InstructorList = () => {
   ]
   const HeaderElements = () => {
     return (
-      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddBook}>
+      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddInstructor}>
         + Add Instructor
       </Button>
     )
