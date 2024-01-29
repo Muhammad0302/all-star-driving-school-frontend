@@ -14,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText'
 import PaymentsIcon from '@mui/icons-material/Payments'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import Groups2Icon from '@mui/icons-material/Groups2'
+import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList'
 import { useRouter } from 'next/navigation'
 const drawerWidth = 240
 
@@ -74,7 +75,7 @@ const Sidebar = () => {
               </ListItemButton>
             </ListItem>
           </List>
-          <Divider />
+
           <List>
             <ListItem key='Issue Book' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('payments')}>
@@ -82,6 +83,37 @@ const Sidebar = () => {
                   <PaymentsIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Payments' />
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem key='Issue Book' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+                <ListItemIcon>
+                  <FeaturedPlayListIcon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Students Assigned to Instructors' />
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <List>
+            <ListItem key='Issue Book' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+                <ListItemIcon>
+                  <FeaturedPlayListIcon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Students/Instructors Lessons Completed' />
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <List>
+            <ListItem key='Issue Book' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+                <ListItemIcon>
+                  <FeaturedPlayListIcon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Private Lessons Assigned to Instrs' />
               </ListItemButton>
             </ListItem>
           </List>
