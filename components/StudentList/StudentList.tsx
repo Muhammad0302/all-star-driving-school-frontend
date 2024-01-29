@@ -20,8 +20,8 @@ const StudentList = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const handleAddMember = () => {
-    router.push('/addmember')
+  const handleAddStudent = () => {
+    router.push('/addstudent')
   }
   const data = [
     [
@@ -387,7 +387,7 @@ const StudentList = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem onClick={handleAddMember}>
+                  <MenuItem onClick={handleAddStudent}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -407,7 +407,7 @@ const StudentList = () => {
   ]
   const HeaderElements = () => {
     return (
-      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddMember}>
+      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddStudent}>
         + Add Student
       </Button>
     )
