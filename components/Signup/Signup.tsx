@@ -320,7 +320,7 @@ export default function Signup() {
                       fontFamily: 'Roboto',
                       fontWeight: '500',
                       fontSize: '20px',
-                      color: '#D9D9D9',
+                      color: '#000000DE',
                     }}
                   >
                     If You Have an already account,

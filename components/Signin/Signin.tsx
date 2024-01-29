@@ -250,7 +250,7 @@ export default function Signin() {
                   textTransform: 'capitalize',
                   fontWeight: '500',
                   fontSize: '18px',
-                  color: '#D9D9D9',
+                  color: '#FF5B39',
                   lineHeight: '34px',
                   marginLeft: {
                     xs: '193px',
@@ -297,8 +297,9 @@ export default function Signin() {
                     fontFamily: 'Roboto',
                     fontWeight: '500',
                     fontSize: '20px',
-                    color: '#D9D9D9',
+
                     marginTop: '40px',
+                    color: '#000000DE',
                   }}
                 >
                   Don&apos;t You have account,
