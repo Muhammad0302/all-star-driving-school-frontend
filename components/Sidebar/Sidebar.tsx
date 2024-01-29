@@ -11,8 +11,6 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import Groups2Icon from '@mui/icons-material/Groups2'
@@ -27,8 +25,8 @@ const Sidebar = () => {
       router.push('/')
     } else if (itemText === 'instructors') {
       router.push('/')
-    } else if (itemText === 'Members') {
-      router.push('/memberlist')
+    } else if (itemText === 'students') {
+      router.push('/students')
     } else if (itemText === 'Issue Book') {
       router.push('/issuebook')
     }
@@ -62,17 +60,17 @@ const Sidebar = () => {
             <ListItem key='Books' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
                 <ListItemIcon>
-                  <LibraryBooksIcon />{' '}
+                  <Groups2Icon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Instructors' />
               </ListItemButton>
             </ListItem>
             <ListItem key='Members' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('Members')}>
+              <ListItemButton onClick={() => handleSiderNavigation('students')}>
                 <ListItemIcon>
                   <Groups2Icon />{' '}
                 </ListItemIcon>
-                <ListItemText primary='Members' />
+                <ListItemText primary='Students' />
               </ListItemButton>
             </ListItem>
           </List>

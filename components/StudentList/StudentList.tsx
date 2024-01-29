@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import { useRouter } from 'next/navigation'
-const MemberList = () => {
+const StudentList = () => {
   const [anchorEl, setAnchorEl] = useState(null)
   const router = useRouter()
   const open = Boolean(anchorEl)
@@ -372,4 +372,4 @@ const MemberList = () => {
   )
 }
 
-export default MemberList
+export default StudentList
