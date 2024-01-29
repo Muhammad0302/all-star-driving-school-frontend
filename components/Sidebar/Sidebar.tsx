@@ -25,8 +25,8 @@ const Sidebar = () => {
     console.log('The item text is:', itemText)
     if (itemText == 'Dashboard') {
       router.push('/')
-    } else if (itemText === 'Books') {
-      router.push('/booklist')
+    } else if (itemText === 'instructors') {
+      router.push('/')
     } else if (itemText === 'Members') {
       router.push('/memberlist')
     } else if (itemText === 'Issue Book') {
@@ -60,11 +60,11 @@ const Sidebar = () => {
               </ListItemButton>
             </ListItem> */}
             <ListItem key='Books' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('Books')}>
+              <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
                 <ListItemIcon>
                   <LibraryBooksIcon />{' '}
                 </ListItemIcon>
-                <ListItemText primary='Books' />
+                <ListItemText primary='Instructors' />
               </ListItemButton>
             </ListItem>
             <ListItem key='Members' disablePadding>

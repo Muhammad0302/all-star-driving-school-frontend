@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import { useRouter } from 'next/navigation'
-const BookList = () => {
+const InstructorList = () => {
   const router = useRouter()
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -157,4 +157,4 @@ const BookList = () => {
   )
 }
 
-export default BookList
+export default InstructorList

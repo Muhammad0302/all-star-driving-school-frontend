@@ -4,7 +4,7 @@ import { withApollo } from 'lib/apollo/withApollo'
 import Homes from '@/components/Home'
 import Link from 'next/link'
 import useViewer from 'hooks/viewer/useViewer'
-import BookList from '@/components/BookList'
+import InstructorList from '@/components/InstructorList'
 
 import { useEffect } from 'react'
 
@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <div className=' py-1 sm:py-12 h-screen'>
         {/* <Homes /> */}
-        <BookList />
+        <InstructorList />
       </div>
     </>
   )
