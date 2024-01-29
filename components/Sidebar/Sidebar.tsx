@@ -46,8 +46,8 @@ const Sidebar = () => {
         }}
       >
         {/* <Toolbar /> */}
-        <div className='flex justify-center items-center'>
-          <img src='Images/logo.jpg' className=' w-100%' />
+        <div className='flex justify-center items-center mt-2'>
+          <img src='Images/logo.jpg' className=' w-[11rem]' />
         </div>
         <Box sx={{ overflow: 'auto' }}>
           <List>

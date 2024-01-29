@@ -33,7 +33,13 @@ export default function RootLayout({ children }: PropsWithChildren<{}>) {
               <CssBaseline />
               {showHeader && <Sidebar />}
               {/* {<Header/>} */}
-              <Box component='main' sx={{ flexGrow: 1, backgroundColor: '#222222' }}>
+              <Box
+                component='main'
+                sx={{
+                  flexGrow: 1,
+                  // backgroundColor: '#222222'
+                }}
+              >
                 {children}
               </Box>
             </Box>
