@@ -51,23 +51,14 @@ const Sidebar = () => {
         </div>
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            {/* {['Dashboard', 'Books', 'Members'].map((text, index) => ( */}
-            {/* <ListItem key='logo' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
-                <ListItemIcon>
-                  <DashboardIcon />{' '}
-                </ListItemIcon>
-
-              </ListItemButton>
-            </ListItem> */}
-            <ListItem key='Dashboard' disablePadding>
+            {/* <ListItem key='Dashboard' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
                 <ListItemIcon>
                   <DashboardIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Dashboard' />
               </ListItemButton>
-            </ListItem>
+            </ListItem> */}
             <ListItem key='Books' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('Books')}>
                 <ListItemIcon>

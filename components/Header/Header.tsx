@@ -76,7 +76,7 @@ const Navbar = () => {
         </SocialBox> */}
 
         <div className='ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
-          All Star Driving School Ltd
+          All Star Driving School
         </div>
         {/* </Typography> */}
 
