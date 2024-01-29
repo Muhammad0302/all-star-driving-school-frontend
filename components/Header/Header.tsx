@@ -75,7 +75,7 @@ const Navbar = () => {
           </Grid>
         </SocialBox> */}
 
-        <div className='ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
+        <div className='text-[#0f0f0fde] ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
           All Star Driving School
         </div>
         {/* </Typography> */}

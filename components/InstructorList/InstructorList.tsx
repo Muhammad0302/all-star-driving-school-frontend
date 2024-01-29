@@ -25,64 +25,64 @@ const InstructorList = () => {
     router.push('/addbook')
   }
   const data = [
-    ['Book 1', 'Fiction', 'Author 1', 'Rack 1', 'Shelf 1'],
-    ['Book 2', 'Non-Fiction', 'Author 2', 'Rack 2', 'Shelf 2'],
-    ['Book 3', 'Mystery', 'Author 3', 'Rack 3', 'Shelf 3'],
-    ['Book 4', 'Science Fiction', 'Author 4', 'Rack 4', 'Shelf 4'],
-    ['Book 5', 'Biography', 'Author 5', 'Rack 5', 'Shelf 5'],
-    ['Book 6', 'History', 'Author 6', 'Rack 6', 'Shelf 6'],
-    ['Book 7', 'Romance', 'Author 7', 'Rack 7', 'Shelf 7'],
-    ['Book 8', 'Thriller', 'Author 8', 'Rack 8', 'Shelf 8'],
-    ['Book 9', 'Fantasy', 'Author 9', 'Rack 9', 'Shelf 9'],
-    ['Book 10', 'Self-Help', 'Author 10', 'Rack 10', 'Shelf 10'],
-    ['Book 11', 'Science', 'Author 11', 'Rack 11', 'Shelf 11'],
-    ['Book 12', 'Travel', 'Author 12', 'Rack 12', 'Shelf 12'],
-    ['Book 13', 'Cooking', 'Author 13', 'Rack 13', 'Shelf 13'],
-    ['Book 14', 'Poetry', 'Author 14', 'Rack 14', 'Shelf 14'],
-    ['Book 15', 'Business', 'Author 15', 'Rack 15', 'Shelf 15'],
-    ['Book 16', 'Art', 'Author 16', 'Rack 16', 'Shelf 16'],
-    ['Book 17', 'Technology', 'Author 17', 'Rack 17', 'Shelf 17'],
-    ['Book 18', 'Health', 'Author 18', 'Rack 18', 'Shelf 18'],
-    ['Book 19', 'Psychology', 'Author 19', 'Rack 19', 'Shelf 19'],
-    ['Book 20', 'Drama', 'Author 20', 'Rack 20', 'Shelf 20'],
+    [1, 'John Doe', '123-456-7890', 'DL-12345', 'DI-67890'],
+    [2, 'Jane Smith', '987-654-3210', 'DL-54321', 'DI-09876'],
+    [3, 'Alice Johnson', '555-123-4567', 'DL-67890', 'DI-23456'],
+    [4, 'Bob Williams', '111-222-3333', 'DL-98765', 'DI-87654'],
+    [5, 'Emily Davis', '444-555-6666', 'DL-43210', 'DI-56789'],
+    [6, 'Michael Brown', '777-888-9999', 'DL-13579', 'DI-24680'],
+    [7, 'Olivia Miller', '333-999-1111', 'DL-24680', 'DI-13579'],
+    [8, 'Daniel Wilson', '666-444-2222', 'DL-86420', 'DI-97531'],
+    [9, 'Sophia Taylor', '222-777-5555', 'DL-98765', 'DI-43210'],
+    [10, 'Ethan Martinez', '999-111-3333', 'DL-12345', 'DI-67890'],
+    [11, 'Ava Anderson', '111-222-3333', 'DL-54321', 'DI-09876'],
+    [12, 'Mason Garcia', '555-123-4567', 'DL-67890', 'DI-23456'],
+    [13, 'Emma Jones', '777-888-9999', 'DL-98765', 'DI-87654'],
+    [14, 'Logan White', '444-555-6666', 'DL-43210', 'DI-56789'],
+    [15, 'Chloe Harris', '333-999-1111', 'DL-24680', 'DI-13579'],
+    [16, 'Liam Turner', '666-444-2222', 'DL-86420', 'DI-97531'],
+    [17, 'Aria Garcia', '222-777-5555', 'DL-98765', 'DI-43210'],
+    [18, 'Noah Miller', '999-111-3333', 'DL-12345', 'DI-67890'],
+    [19, 'Grace Robinson', '111-222-3333', 'DL-54321', 'DI-09876'],
+    [20, 'Elijah Clark', '555-123-4567', 'DL-67890', 'DI-23456'],
   ]
 
   const columns = [
     {
-      name: 'Name',
-      label: 'Name',
+      name: 'ID',
+      label: 'ID',
       options: {
         filter: true,
         sort: true,
       },
     },
     {
-      name: 'Category',
-      label: 'Category',
+      name: 'Name',
+      label: 'Name',
       options: {
         filter: true,
         sort: false,
       },
     },
     {
-      name: 'Author',
-      label: 'Author',
+      name: 'Phone',
+      label: 'Phone Number',
       options: {
         filter: true,
         sort: false,
       },
     },
     {
-      name: 'Rack',
-      label: 'Rack',
+      name: 'DriverLicense',
+      label: 'Driver License No',
       options: {
         filter: true,
         sort: false,
       },
     },
     {
-      name: 'Shelf',
-      label: 'Shelf',
+      name: 'DILicense',
+      label: 'DI License No',
       options: {
         filter: true,
         sort: false,
@@ -134,7 +134,7 @@ const InstructorList = () => {
   const HeaderElements = () => {
     return (
       <Button type='button' onClick={handleAddBook}>
-        + Add Book
+        + Add Instructor
       </Button>
     )
   }
@@ -142,16 +142,17 @@ const InstructorList = () => {
   const options = {
     filterType: 'checkbox' as const,
     customToolbar: HeaderElements,
+    print: false,
   }
 
   return (
     <>
       {' '}
       <Box sx={{ padding: '24px' }}>
-        <div className='mt-10 text-[20x] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
-          Books list
+        <div className='mt-10 mb-[1rem] text-[20x] sm:text-[19px] md:text-[23px] lg:text-[26px] text-center font-russoone font-normal'>
+          Instructors list
         </div>
-        <MUIDataTable title={'Books Information'} data={data} columns={columns} options={options} />
+        <MUIDataTable title={''} data={data} columns={columns} options={options} />
       </Box>
     </>
   )
