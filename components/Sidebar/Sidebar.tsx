@@ -11,7 +11,7 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
+import PaymentsIcon from '@mui/icons-material/Payments'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import Groups2Icon from '@mui/icons-material/Groups2'
 import { useRouter } from 'next/navigation'
@@ -27,8 +27,8 @@ const Sidebar = () => {
       router.push('/')
     } else if (itemText === 'students') {
       router.push('/students')
-    } else if (itemText === 'Issue Book') {
-      router.push('/issuebook')
+    } else if (itemText === 'payments') {
+      router.push('/payments')
     }
   }
   return (
@@ -77,11 +77,11 @@ const Sidebar = () => {
           <Divider />
           <List>
             <ListItem key='Issue Book' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('Issue Book')}>
+              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
                 <ListItemIcon>
-                  <LibraryBooksIcon />{' '}
+                  <PaymentsIcon />{' '}
                 </ListItemIcon>
-                <ListItemText primary='Issue Books' />
+                <ListItemText primary='Payments' />
               </ListItemButton>
             </ListItem>
           </List>
