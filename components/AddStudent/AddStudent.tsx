@@ -39,7 +39,7 @@ const AddStudent = () => {
     },
   })
   return (
-    <div className='mt-6'>
+    <div className='mt-[3.5rem]'>
       <form onSubmit={formik.handleSubmit}>
         <Grid
           container
@@ -62,7 +62,7 @@ const AddStudent = () => {
               value={formik.values.studentId}
               onChange={formik.handleChange}
               error={formik.touched.studentId && Boolean(formik.errors.studentId)}
-              helperText={formik.touched.studentId && formik.errors.studentId}
+              helperText={formik.touched.studentId && (formik.errors.studentId as any)}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -81,7 +81,7 @@ const AddStudent = () => {
               value={formik.values.name}
               onChange={formik.handleChange}
               error={formik.touched.name && Boolean(formik.errors.name)}
-              helperText={formik.touched.name && formik.errors.name}
+              helperText={formik.touched.name && (formik.errors.name as any)}
             />
           </Grid>
 
@@ -101,7 +101,7 @@ const AddStudent = () => {
               value={formik.values.address}
               onChange={formik.handleChange}
               error={formik.touched.address && Boolean(formik.errors.address)}
-              helperText={formik.touched.address && formik.errors.address}
+              helperText={formik.touched.address && (formik.errors.address as any)}
             />
           </Grid>
 
@@ -121,7 +121,7 @@ const AddStudent = () => {
               value={formik.values.phoneNumber}
               onChange={formik.handleChange}
               error={formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)}
-              helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
+              helperText={formik.touched.phoneNumber && (formik.errors.phoneNumber as any)}
             />
           </Grid>
 
@@ -141,7 +141,7 @@ const AddStudent = () => {
               value={formik.values.licenseNumber}
               onChange={formik.handleChange}
               error={formik.touched.licenseNumber && Boolean(formik.errors.licenseNumber)}
-              helperText={formik.touched.licenseNumber && formik.errors.licenseNumber}
+              helperText={formik.touched.licenseNumber && (formik.errors.licenseNumber as any)}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -160,7 +160,9 @@ const AddStudent = () => {
               value={formik.values.licenseIssueDate}
               onChange={formik.handleChange}
               error={formik.touched.licenseIssueDate && Boolean(formik.errors.licenseIssueDate)}
-              helperText={formik.touched.licenseIssueDate && formik.errors.licenseIssueDate}
+              helperText={
+                formik.touched.licenseIssueDate && (formik.errors.licenseIssueDate as any)
+              }
             />
           </Grid>
 
@@ -180,7 +182,9 @@ const AddStudent = () => {
               value={formik.values.licenseExpiryDate}
               onChange={formik.handleChange}
               error={formik.touched.licenseExpiryDate && Boolean(formik.errors.licenseExpiryDate)}
-              helperText={formik.touched.licenseExpiryDate && formik.errors.licenseExpiryDate}
+              helperText={
+                formik.touched.licenseExpiryDate && (formik.errors.licenseExpiryDate as any)
+              }
             />
           </Grid>
 
@@ -200,7 +204,9 @@ const AddStudent = () => {
               value={formik.values.courseExpiryDate}
               onChange={formik.handleChange}
               error={formik.touched.courseExpiryDate && Boolean(formik.errors.courseExpiryDate)}
-              helperText={formik.touched.courseExpiryDate && formik.errors.courseExpiryDate}
+              helperText={
+                formik.touched.courseExpiryDate && (formik.errors.courseExpiryDate as any)
+              }
             />
           </Grid>
 
@@ -223,7 +229,7 @@ const AddStudent = () => {
                 formik.touched.totalPaymentsReceived && Boolean(formik.errors.totalPaymentsReceived)
               }
               helperText={
-                formik.touched.totalPaymentsReceived && formik.errors.totalPaymentsReceived
+                formik.touched.totalPaymentsReceived && (formik.errors.totalPaymentsReceived as any)
               }
             />
           </Grid>
@@ -244,7 +250,9 @@ const AddStudent = () => {
               value={formik.values.mtoCertification}
               onChange={formik.handleChange}
               error={formik.touched.mtoCertification && Boolean(formik.errors.mtoCertification)}
-              helperText={formik.touched.mtoCertification && formik.errors.mtoCertification}
+              helperText={
+                formik.touched.mtoCertification && (formik.errors.mtoCertification as any)
+              }
             />
           </Grid>
 
@@ -264,7 +272,7 @@ const AddStudent = () => {
               value={formik.values.score}
               onChange={formik.handleChange}
               error={formik.touched.score && Boolean(formik.errors.score)}
-              helperText={formik.touched.score && formik.errors.score}
+              helperText={(formik.touched.score && formik.errors.score) as any}
             />
           </Grid>
 

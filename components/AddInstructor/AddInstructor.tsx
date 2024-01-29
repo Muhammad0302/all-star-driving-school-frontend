@@ -28,7 +28,7 @@ const AddInstructor = () => {
   })
   // added here ..
   return (
-    <div className='mt-6'>
+    <div className='mt-[3.5rem]'>
       <form onSubmit={formik.handleSubmit}>
         <Grid
           container
