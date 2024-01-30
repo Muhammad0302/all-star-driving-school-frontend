@@ -22,8 +22,8 @@ const StdsIntrsLssnCompleted = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const handleAddIssueBook = () => {
-    router.push('/addpayment')
+  const handleAddLessonCompletion = () => {
+    router.push('/addlessoncompletion')
   }
   const data = [
     ['3847', 'Instructor 1', 'I67/05/60', 'John Doe', '$0.50', '$0.75', '$1.00', '10', 'Yes'],
@@ -197,7 +197,7 @@ const StdsIntrsLssnCompleted = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem onClick={handleAddIssueBook}>
+                  <MenuItem onClick={handleAddLessonCompletion}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -218,7 +218,7 @@ const StdsIntrsLssnCompleted = () => {
 
   const HeaderElements = () => {
     return (
-      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddIssueBook}>
+      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddLessonCompletion}>
         + Add Lesson Completion
       </Button>
     )

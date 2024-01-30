@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import { useRouter } from 'next/navigation'
+import './styles.css'
 const StudentList = () => {
   const [anchorEl, setAnchorEl] = useState(null)
   const router = useRouter()
