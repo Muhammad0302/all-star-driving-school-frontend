@@ -21,7 +21,6 @@ const drawerWidth = 240
 const Sidebar = () => {
   const router = useRouter()
   const handleSiderNavigation = (itemText: string) => {
-    console.log('The item text is:', itemText)
     if (itemText == 'Dashboard') {
       router.push('/')
     } else if (itemText === 'instructors') {
@@ -30,6 +29,12 @@ const Sidebar = () => {
       router.push('/students')
     } else if (itemText === 'payments') {
       router.push('/payments')
+    } else if (itemText === 'stdsasigndtoinstrs') {
+      router.push('/stdsasigndtoinstrs')
+    } else if (itemText === 'stdsintrslssncompleted') {
+      router.push('/stdsintrslssncompleted')
+    } else if (itemText === 'pvtlssnasgndtoinstrs') {
+      router.push('/pvtlssnasgndtoinstrs')
     }
   }
   return (
@@ -89,7 +94,7 @@ const Sidebar = () => {
           {/* <Divider /> */}
           <List>
             <ListItem key='Issue Book' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+              <ListItemButton onClick={() => handleSiderNavigation('stdsasigndtoinstrs')}>
                 <ListItemIcon>
                   <FeaturedPlayListIcon />{' '}
                 </ListItemIcon>
@@ -99,7 +104,7 @@ const Sidebar = () => {
           </List>
           <List>
             <ListItem key='Issue Book' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+              <ListItemButton onClick={() => handleSiderNavigation('stdsintrslssncompleted')}>
                 <ListItemIcon>
                   <FeaturedPlayListIcon />{' '}
                 </ListItemIcon>
@@ -109,7 +114,7 @@ const Sidebar = () => {
           </List>
           <List>
             <ListItem key='Issue Book' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+              <ListItemButton onClick={() => handleSiderNavigation('pvtlssnasgndtoinstrs')}>
                 <ListItemIcon>
                   <FeaturedPlayListIcon />{' '}
                 </ListItemIcon>
