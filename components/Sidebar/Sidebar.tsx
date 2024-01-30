@@ -63,7 +63,7 @@ const Sidebar = () => {
                 <ListItemText primary='Dashboard' />
               </ListItemButton>
             </ListItem> */}
-            <ListItem key='Books' disablePadding>
+            <ListItem key='Instructors' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
                 <ListItemIcon>
                   <DashboardIcon />{' '}
@@ -71,7 +71,7 @@ const Sidebar = () => {
                 <ListItemText primary='Instructors' />
               </ListItemButton>
             </ListItem>
-            <ListItem key='Members' disablePadding>
+            <ListItem key='Students' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('students')}>
                 <ListItemIcon>
                   <DashboardIcon />{' '}
@@ -82,7 +82,7 @@ const Sidebar = () => {
           </List>
 
           <List>
-            <ListItem key='Issue Book' disablePadding>
+            <ListItem key='payments' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('payments')}>
                 <ListItemIcon>
                   <PaymentsIcon />{' '}
@@ -93,7 +93,7 @@ const Sidebar = () => {
           </List>
           {/* <Divider /> */}
           <List>
-            <ListItem key='Issue Book' disablePadding>
+            <ListItem key='stdsasigndtoinstrs' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('stdsasigndtoinstrs')}>
                 <ListItemIcon>
                   <FeaturedPlayListIcon />{' '}
@@ -103,7 +103,7 @@ const Sidebar = () => {
             </ListItem>
           </List>
           <List>
-            <ListItem key='Issue Book' disablePadding>
+            <ListItem key='stdsintrslssncompleted' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('stdsintrslssncompleted')}>
                 <ListItemIcon>
                   <FeaturedPlayListIcon />{' '}
@@ -113,7 +113,7 @@ const Sidebar = () => {
             </ListItem>
           </List>
           <List>
-            <ListItem key='Issue Book' disablePadding>
+            <ListItem key='pvtlssnasgndtoinstrs' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('pvtlssnasgndtoinstrs')}>
                 <ListItemIcon>
                   <FeaturedPlayListIcon />{' '}
