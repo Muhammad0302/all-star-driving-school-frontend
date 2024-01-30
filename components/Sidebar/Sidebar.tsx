@@ -48,7 +48,7 @@ const Sidebar = () => {
         <div className='flex justify-center items-center mt-2'>
           <img src='Images/logo.jpg' className=' w-[11rem]' />
         </div>
-        <Box sx={{ overflow: 'auto' }}>
+        <Box sx={{ overflow: 'auto', marginTop: '2rem' }}>
           <List>
             {/* <ListItem key='Dashboard' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
@@ -61,7 +61,7 @@ const Sidebar = () => {
             <ListItem key='Books' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
                 <ListItemIcon>
-                  <Groups2Icon />{' '}
+                  <DashboardIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Instructors' />
               </ListItemButton>
@@ -69,7 +69,7 @@ const Sidebar = () => {
             <ListItem key='Members' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('students')}>
                 <ListItemIcon>
-                  <Groups2Icon />{' '}
+                  <DashboardIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Students' />
               </ListItemButton>
@@ -86,7 +86,7 @@ const Sidebar = () => {
               </ListItemButton>
             </ListItem>
           </List>
-          <Divider />
+          {/* <Divider /> */}
           <List>
             <ListItem key='Issue Book' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('payments')}>

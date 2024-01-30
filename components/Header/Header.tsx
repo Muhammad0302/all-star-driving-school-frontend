@@ -60,11 +60,10 @@ const Navbar = () => {
   return (
     <AppBar
       sx={{
-        // zIndex: 2,
         background: '#f23d4d',
-        // background: '#ed3237 ',
+
         paddingLeft: { xs: '1px', sm: '55px' },
-        paddingRight: { xs: '1px', md: '30px' },
+        paddingRight: { xs: '1px', md: '5px' },
       }}
       position={'fixed'}
     >
@@ -76,9 +75,8 @@ const Navbar = () => {
         </SocialBox> */}
 
         <div className='text-[#0f0f0fde] ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
-          All Star Driving School
+          Welcome to All Star Driving School
         </div>
-        {/* </Typography> */}
 
         <Typography />
 
@@ -97,7 +95,7 @@ const Navbar = () => {
         >
           <div
             style={{ transform: 'translate(-10%, 50%)' }}
-            className=' bg-white border-2 rounded-lg px-4 p-1 text-black'
+            className=' bg-white border-2 rounded-lg w-[9.5rem] px-4 p-1 text-black'
           >
             <h3 className=' text-base'>Options</h3>
 
