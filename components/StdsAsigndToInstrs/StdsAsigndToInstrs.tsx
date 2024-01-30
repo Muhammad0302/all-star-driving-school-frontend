@@ -22,8 +22,8 @@ const StdsAsigndToInstrs = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const handleAddIssueBook = () => {
-    router.push('/addinstructor')
+  const handleAssignInstructor = () => {
+    router.push('/assigninstructor')
   }
   const data = [
     ['3847', 'John Doe', 'I67/05/60', 'Emma Watson'],
@@ -106,7 +106,7 @@ const StdsAsigndToInstrs = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem onClick={handleAddIssueBook}>
+                  <MenuItem onClick={handleAssignInstructor}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -127,7 +127,7 @@ const StdsAsigndToInstrs = () => {
 
   const HeaderElements = () => {
     return (
-      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddIssueBook}>
+      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAssignInstructor}>
         + Assign Instructor
       </Button>
     )
