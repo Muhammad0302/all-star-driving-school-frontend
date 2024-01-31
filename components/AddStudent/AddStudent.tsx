@@ -3,15 +3,20 @@ import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { Grid, TextField, Button } from '@mui/material'
 import { useRouter } from 'next/navigation'
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import './styles.css'
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
   studentId: yup.string().required('Student Id is required'),
   address: yup.string().required('Address is required'),
   phoneNumber: yup.string().required('Phone Number is required'),
   licenseNumber: yup.string().required('License Number is required'),
-  licenseIssueDate: yup.string().required('License Issue Date is required'),
-  licenseExpiryDate: yup.string().required('License Expiry Date is required'),
-  courseExpiryDate: yup.string().required('Course Expiry Date is required'),
+  licenseIssueDate: yup.string(),
+  licenseExpiryDate: yup.string(),
+  courseExpiryDate: yup.string(),
   totalPaymentsReceived: yup.string().required('Total Payments Received is required'),
   mtoCertification: yup.string().required('MTO Certification is required'),
   score: yup.string().required('Score is required'),
@@ -35,7 +40,7 @@ const AddStudent = () => {
     validationSchema: validationSchema,
     onSubmit: async (values: any) => {
       console.log(values)
-      router.push('/studentlist')
+      router.push('/students')
     },
   })
   return (
@@ -144,7 +149,7 @@ const AddStudent = () => {
               helperText={formik.touched.licenseNumber && (formik.errors.licenseNumber as any)}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          {/* <Grid item xs={12} sm={6}>
             <TextField
               id='licenseIssueDate'
               name='licenseIssueDate'
@@ -208,7 +213,7 @@ const AddStudent = () => {
                 formik.touched.courseExpiryDate && (formik.errors.courseExpiryDate as any)
               }
             />
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} sm={6}>
             <TextField
@@ -260,7 +265,7 @@ const AddStudent = () => {
             <TextField
               id='score'
               name='score'
-              label='Score'
+              label='Score%'
               variant='outlined'
               fullWidth
               sx={{
@@ -274,6 +279,28 @@ const AddStudent = () => {
               error={formik.touched.score && Boolean(formik.errors.score)}
               helperText={(formik.touched.score && formik.errors.score) as any}
             />
+          </Grid>
+
+          <Grid item xs={12} sm={3}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={['DatePicker']}>
+                <DatePicker label='License Issue Date' />
+              </DemoContainer>
+            </LocalizationProvider>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={['DatePicker']}>
+                <DatePicker label='License Expiry Date' />
+              </DemoContainer>
+            </LocalizationProvider>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={['DatePicker']}>
+                <DatePicker label='Course Expiry Date' />
+              </DemoContainer>
+            </LocalizationProvider>
           </Grid>
 
           <Grid item xs={12} container justifyContent='flex-end'>

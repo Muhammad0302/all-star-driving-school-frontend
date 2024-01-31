@@ -3,12 +3,18 @@ import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { Grid, TextField, Button } from '@mui/material'
 import { useRouter } from 'next/navigation'
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import './styles.css'
 const validationSchema = yup.object({
   studentId: yup.string().required('Student ID is required'),
   name: yup.string().required('Student Name is required'),
   amount: yup.string().required('Amount is required'),
   paymentType: yup.string().required('Payment Type is required'),
-  date: yup.string().required('Date is required'),
+  paymentMethod: yup.string().required('Payment Method is required'),
+  date: yup.string(),
 })
 const AddPayment = () => {
   const router = useRouter()
@@ -18,6 +24,7 @@ const AddPayment = () => {
       name: '',
       amount: '',
       paymentType: '',
+      paymentMethod: '',
       date: '',
     },
     validationSchema: validationSchema,
@@ -119,11 +126,11 @@ const AddPayment = () => {
               helperText={formik.touched.paymentType && (formik.errors.paymentType as any)}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} sx={{ marginTop: '8px' }}>
             <TextField
-              id='date'
-              name='date'
-              label='Date'
+              id='paymentMethod'
+              name='paymentMethod'
+              label='Payment Method'
               variant='outlined'
               fullWidth
               sx={{
@@ -133,14 +140,21 @@ const AddPayment = () => {
                 focused: false,
               }}
               type='text'
-              value={formik.values.date}
+              value={formik.values.paymentMethod}
+              onChange={formik.handleChange}
               onKeyDown={(event) => {
                 event.stopPropagation()
               }}
-              onChange={formik.handleChange}
-              error={formik.touched.date && Boolean(formik.errors.date)}
-              helperText={formik.touched.date && (formik.errors.date as any)}
+              error={formik.touched.paymentMethod && Boolean(formik.errors.paymentMethod)}
+              helperText={formik.touched.paymentMethod && (formik.errors.paymentMethod as any)}
             />
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={['DatePicker']}>
+                <DatePicker label='Date' />
+              </DemoContainer>
+            </LocalizationProvider>
           </Grid>
 
           <Grid item xs={12} container justifyContent='flex-end'>
