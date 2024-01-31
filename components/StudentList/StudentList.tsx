@@ -276,8 +276,8 @@ const StudentList = () => {
 
   const columns = [
     {
-      name: 'StudentId',
-      label: 'Student Id',
+      name: 'Id',
+      label: 'Id',
       options: {
         filter: true,
         sort: true,
