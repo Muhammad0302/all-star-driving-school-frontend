@@ -240,7 +240,7 @@ const StdsIntrsLssnCompleted = () => {
     <>
       <Box sx={{ padding: '24px' }}>
         <div className='mt-10 mb-[1rem] text-[20x] sm:text-[19px] md:text-[23px] lg:text-[26px] text-center font-russoone font-normal'>
-          Students/Instructors Lessons completed List
+          Students/Instructors Lessons Completion List
         </div>
         <MUIDataTable title={''} data={data} columns={columns} options={options} />
       </Box>

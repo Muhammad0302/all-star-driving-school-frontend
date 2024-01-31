@@ -11,11 +11,14 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import PaymentsIcon from '@mui/icons-material/Payments'
+import PaymentIcon from '@mui/icons-material/Payment'
 import DashboardIcon from '@mui/icons-material/Dashboard'
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
+import AssignmentIcon from '@mui/icons-material/Assignment'
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck'
 import Groups2Icon from '@mui/icons-material/Groups2'
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList'
-
+import './styles.css'
 import { useRouter } from 'next/navigation'
 const drawerWidth = 240
 
@@ -67,7 +70,7 @@ const Sidebar = () => {
             <ListItem key='Instructors' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
                 <ListItemIcon>
-                  <DashboardIcon />{' '}
+                  <PeopleAltIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Instructors' />
               </ListItemButton>
@@ -75,7 +78,7 @@ const Sidebar = () => {
             <ListItem key='Students' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('students')}>
                 <ListItemIcon>
-                  <DashboardIcon />{' '}
+                  <PeopleAltIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Students' />
               </ListItemButton>
@@ -86,7 +89,7 @@ const Sidebar = () => {
             <ListItem key='payments' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('payments')}>
                 <ListItemIcon>
-                  <PaymentsIcon />{' '}
+                  <PaymentIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Payments' />
               </ListItemButton>
@@ -97,7 +100,7 @@ const Sidebar = () => {
             <ListItem key='stdsasigndtoinstrs' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('stdsasigndtoinstrs')}>
                 <ListItemIcon>
-                  <FeaturedPlayListIcon />{' '}
+                  <AssignmentIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Students Assigned to Instructors' />
               </ListItemButton>
@@ -107,7 +110,7 @@ const Sidebar = () => {
             <ListItem key='stdsintrslssncompleted' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('stdsintrslssncompleted')}>
                 <ListItemIcon>
-                  <FeaturedPlayListIcon />{' '}
+                  <LibraryAddCheckIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Students/Instructors Lessons Completed' />
               </ListItemButton>
@@ -117,7 +120,7 @@ const Sidebar = () => {
             <ListItem key='pvtlssnasgndtoinstrs' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('pvtlssnasgndtoinstrs')}>
                 <ListItemIcon>
-                  <FeaturedPlayListIcon />{' '}
+                  <AssignmentIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Private Lessons Assigned to Instrs' />
               </ListItemButton>
