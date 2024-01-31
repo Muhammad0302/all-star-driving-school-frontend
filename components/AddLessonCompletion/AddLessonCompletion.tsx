@@ -2,7 +2,13 @@ import React from 'react'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { Grid, TextField, Button } from '@mui/material'
+import Box from '@mui/material/Box'
 import { useRouter } from 'next/navigation'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
+import './styles.css'
 const validationSchema = yup.object({
   instructorId: yup.string().required('Instructor ID is required'),
   instructorName: yup.string().required('Instructor Name is required'),
@@ -12,9 +18,15 @@ const validationSchema = yup.object({
   package2: yup.string().required('Package 2 is required'),
   package3: yup.string().required('Package 3 is required'),
   lessonsCompleted: yup.string().required('Lessons Completed is required'),
-  roadTestCompleted: yup.string().required('Road Test Completed is required'),
+  roadTestCompleted: yup.string(),
 })
 const AddLessonCompletion = () => {
+  const [roadTest, setRoadTest] = React.useState('')
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setRoadTest(event.target.value as string)
+  }
+
   const router = useRouter()
   const formik = useFormik({
     initialValues: {
@@ -196,7 +208,7 @@ const AddLessonCompletion = () => {
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
+            {/* <TextField
               id='roadTestCompleted'
               name='roadTestCompleted'
               label='Road Test Completed'
@@ -212,7 +224,22 @@ const AddLessonCompletion = () => {
               InputLabelProps={{
                 focused: false,
               }}
-            />
+            /> */}
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id='demo-simple-select-label'>Road Test Completed</InputLabel>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={roadTest}
+                  label='Road Test Completed'
+                  onChange={handleChange}
+                >
+                  <MenuItem value={'yes'}>Yes</MenuItem>
+                  <MenuItem value={'no'}>No</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
           </Grid>
 
           <Grid item xs={12} container justifyContent='flex-end'>

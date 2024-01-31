@@ -3,16 +3,27 @@ import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { Grid, TextField, Button } from '@mui/material'
 import { useRouter } from 'next/navigation'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
+import Box from '@mui/material/Box'
+import './styles.css'
 const validationSchema = yup.object({
   studentName: yup.string().required('Student Name is required'),
   studentPhone: yup.string().required('Student Phone is required'),
   instructorName: yup.string().required('Instructor Name is required'),
   initialLessonsRequested: yup.string().required('Initial Lessons Requested is required'),
-  roadTestRequested: yup.string().required('Road Test Requested is required'),
+  roadTestRequested: yup.string(),
   lessonsCompleted: yup.string().required('Number of Lessons Completed is required'),
-  roadTestCompleted: yup.string().required('Road Test Completed is required'),
+  roadTestCompleted: yup.string(),
 })
 const AddPrivateLesson = () => {
+  const [roadTest, setRoadTest] = React.useState('')
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setRoadTest(event.target.value as string)
+  }
   const router = useRouter()
   const formik = useFormik({
     initialValues: {
@@ -126,7 +137,7 @@ const AddPrivateLesson = () => {
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
+            {/* <TextField
               id='roadTestRequested'
               name='roadTestRequested'
               label='Road Test Requested'
@@ -148,7 +159,23 @@ const AddPrivateLesson = () => {
               helperText={
                 formik.touched.roadTestRequested && (formik.errors.roadTestRequested as any)
               }
-            />
+            /> */}
+
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id='demo-simple-select-label'>Road Test Requested</InputLabel>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={roadTest}
+                  label='Road Test Requested'
+                  onChange={handleChange}
+                >
+                  <MenuItem value={'yes'}>Yes</MenuItem>
+                  <MenuItem value={'no'}>No</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -176,7 +203,7 @@ const AddPrivateLesson = () => {
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
+            {/* <TextField
               id='roadTestCompleted'
               name='roadTestCompleted'
               label='Road Test Completed'
@@ -198,7 +225,23 @@ const AddPrivateLesson = () => {
               helperText={
                 formik.touched.roadTestCompleted && (formik.errors.roadTestCompleted as any)
               }
-            />
+            /> */}
+
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id='demo-simple-select-label'>Road Test Completed</InputLabel>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={roadTest}
+                  label='Road Test Completed'
+                  onChange={handleChange}
+                >
+                  <MenuItem value={'yes'}>Yes</MenuItem>
+                  <MenuItem value={'no'}>No</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
           </Grid>
 
           <Grid item xs={12} container justifyContent='flex-end'>
