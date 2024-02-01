@@ -58,7 +58,7 @@ export default function Signin() {
   const StyleTextField = styled(TextField)({
     input: {
       '&::placeholder': {
-        color: '#fff',
+        color: 'grey',
         opacity: 1,
       },
     },
@@ -105,7 +105,7 @@ export default function Signin() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginTop: '18%',
+          marginTop: '23%',
         }}
       >
         <Typography
@@ -114,6 +114,7 @@ export default function Signin() {
             fontWeight: '400',
             marginBottom: '60px',
             fontFamily: 'Russo One',
+            lineHeight: '0.5rem',
           }}
         >
           Signin
@@ -144,8 +145,6 @@ export default function Signin() {
           const { values, touched, errors, handleBlur, handleChange, isSubmitting } = props
           return (
             <Form>
-              {/* <form onSubmit={props.handleSubmit(props.onSubmit)}> */}
-
               <FormControl
                 fullWidth
                 sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
@@ -165,8 +164,6 @@ export default function Signin() {
                     },
                     width: '57%',
                   }}
-                  // sx={{border:"1px solid #FF5B39",borderRadius:"5px",width:"57%"}}
-
                   value={values.email}
                   helperText={errors.email && touched.email ? errors.email : ''}
                   error={errors.email && touched.email ? true : false}
@@ -238,39 +235,54 @@ export default function Signin() {
                       </InputAdornment>
                     ),
                   }}
-
-                  // className={classes.textField}
                 />
               </FormControl>
-
-              <Button
-                onClick={() => router.push('/password')}
+              <FormControl
+                fullWidth
                 sx={{
-                  fontFamily: 'Hind Guntur',
-                  textTransform: 'capitalize',
-                  fontWeight: '500',
-                  fontSize: '18px',
-                  color: '#f23d4d',
-                  lineHeight: '34px',
-                  marginLeft: {
-                    xs: '193px',
-                    sm: '362px',
-                    smm: '463px',
-                    md: '395px',
-                    lg: '458px',
-                    xl: '730px',
-                  },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
                 }}
               >
-                Forget password
-              </Button>
-
+                <Box
+                  sx={{
+                    width: '57%',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Button
+                    onClick={() => router.push('/password')}
+                    sx={{
+                      fontFamily: 'Hind Guntur',
+                      textTransform: 'capitalize',
+                      fontWeight: '500',
+                      fontSize: '18px',
+                      color: '#f23d4d',
+                      lineHeight: '34px',
+                      // marginRight: '70px',
+                      // marginLeft: {
+                      //   xs: '193px',
+                      //   sm: '362px',
+                      //   smm: '463px',
+                      //   md: '395px',
+                      //   lg: '458px',
+                      //   xl: '730px',
+                      // },
+                    }}
+                  >
+                    Forget password
+                  </Button>
+                </Box>
+              </FormControl>
               <Box
                 sx={{
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  marginTop: '100px',
+                  marginTop: '23px',
                 }}
               >
                 <Button
@@ -292,8 +304,6 @@ export default function Signin() {
                 >
                   Sign In
                 </Button>
-
-                {/* <Grid container > */}
 
                 <Typography
                   sx={{
@@ -322,11 +332,7 @@ export default function Signin() {
                     </Link>
                   </span>
                 </Typography>
-
-                {/*           
-           </Grid> */}
               </Box>
-              {/* </form> */}
             </Form>
           )
         }}
