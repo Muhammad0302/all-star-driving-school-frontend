@@ -310,7 +310,6 @@ export default function Signin() {
                     fontFamily: 'Roboto',
                     fontWeight: '500',
                     fontSize: '20px',
-
                     marginTop: '40px',
                     color: '#000000DE',
                   }}
