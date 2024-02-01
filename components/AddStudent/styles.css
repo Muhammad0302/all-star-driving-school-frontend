@@ -11,4 +11,8 @@
 }
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
   color: grey !important;
+  border-color: #f23d4d !important;
+}
+.Mui-focused.MuiOutlinedInput-notchedOutline {
+  border-color: #f23d4d !important;
 }
