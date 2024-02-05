@@ -149,71 +149,6 @@ const AddStudent = () => {
               helperText={formik.touched.licenseNumber && (formik.errors.licenseNumber as any)}
             />
           </Grid>
-          {/* <Grid item xs={12} sm={6}>
-            <TextField
-              id='licenseIssueDate'
-              name='licenseIssueDate'
-              label='License Issue Date'
-              variant='outlined'
-              fullWidth
-              sx={{
-                '& fieldset': { borderColor: '#f23d4d !important' },
-              }}
-              InputLabelProps={{
-                focused: false,
-              }}
-              value={formik.values.licenseIssueDate}
-              onChange={formik.handleChange}
-              error={formik.touched.licenseIssueDate && Boolean(formik.errors.licenseIssueDate)}
-              helperText={
-                formik.touched.licenseIssueDate && (formik.errors.licenseIssueDate as any)
-              }
-            />
-          </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <TextField
-              id='licenseExpiryDate'
-              name='licenseExpiryDate'
-              label='License Expiry Date'
-              variant='outlined'
-              fullWidth
-              sx={{
-                '& fieldset': { borderColor: '#f23d4d !important' },
-              }}
-              InputLabelProps={{
-                focused: false,
-              }}
-              value={formik.values.licenseExpiryDate}
-              onChange={formik.handleChange}
-              error={formik.touched.licenseExpiryDate && Boolean(formik.errors.licenseExpiryDate)}
-              helperText={
-                formik.touched.licenseExpiryDate && (formik.errors.licenseExpiryDate as any)
-              }
-            />
-          </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <TextField
-              id='courseExpiryDate'
-              name='courseExpiryDate'
-              label='Course Expiry Date'
-              variant='outlined'
-              fullWidth
-              sx={{
-                '& fieldset': { borderColor: '#f23d4d !important' },
-              }}
-              InputLabelProps={{
-                focused: false,
-              }}
-              value={formik.values.courseExpiryDate}
-              onChange={formik.handleChange}
-              error={formik.touched.courseExpiryDate && Boolean(formik.errors.courseExpiryDate)}
-              helperText={
-                formik.touched.courseExpiryDate && (formik.errors.courseExpiryDate as any)
-              }
-            />
-          </Grid> */}
 
           <Grid item xs={12} sm={6}>
             <TextField
@@ -298,7 +233,7 @@ const AddStudent = () => {
           <Grid item xs={12} sm={3}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={['DatePicker']}>
-                <DatePicker label='Course Expiry Date' />
+                <DatePicker label='Course Start Date' />
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
