@@ -28,7 +28,7 @@ const Sidebar = () => {
     if (itemText == 'Dashboard') {
       router.push('/')
     } else if (itemText === 'instructors') {
-      router.push('/')
+      router.push('/instructors')
     } else if (itemText === 'students') {
       router.push('/students')
     } else if (itemText === 'payments') {
@@ -59,14 +59,14 @@ const Sidebar = () => {
         </div>
         <Box sx={{ overflow: 'auto', marginTop: '2rem' }}>
           <List>
-            {/* <ListItem key='Dashboard' disablePadding>
+            <ListItem key='Dashboard' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
                 <ListItemIcon>
                   <DashboardIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Dashboard' />
               </ListItemButton>
-            </ListItem> */}
+            </ListItem>
             <ListItem key='Instructors' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
                 <ListItemIcon>
