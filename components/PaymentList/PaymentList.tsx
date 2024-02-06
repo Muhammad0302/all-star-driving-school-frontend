@@ -6,13 +6,17 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import { useRouter } from 'next/navigation'
 import './styles.css'
+import ViewDetail from './ViewDetail'
 const PaymentList = () => {
   const router = useRouter()
+  const [openModal, setOpenModal] = useState(false)
+  const handleOpen = () => setOpenModal(true)
+  const handleCloseFunc = () => setOpenModal(false)
   const [anchorEl, setAnchorEl] = useState(null)
-
   const open = Boolean(anchorEl)
   const [activeRow, setActiveRow] = useState(null)
   const handleClick = (event: any, index: any) => {
@@ -546,10 +550,16 @@ const PaymentList = () => {
                   <MenuItem onClick={handleAddIssueBook}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
-                  <MenuItem
-                  // onClick={() => handleDelete(tableMeta.rowData[0])}
-                  >
+                  <MenuItem onClick={handleClose}>
                     <DeleteOutlineOutlinedIcon /> Delete
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleOpen()
+                      handleClose()
+                    }}
+                  >
+                    <RemoveRedEyeIcon /> View Detail
                   </MenuItem>
                 </Menu>
               ) : (
@@ -585,6 +595,7 @@ const PaymentList = () => {
           Payment List
         </div>
         <MUIDataTable title={''} data={data} columns={columns} options={options} />
+        <ViewDetail open={openModal} handleClose={handleCloseFunc} />
       </Box>
     </>
   )
