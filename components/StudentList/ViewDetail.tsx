@@ -22,7 +22,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '90%',
+  width: '96%',
   minHeight: '25%',
   bgcolor: 'background.paper',
   border: 'none',
@@ -56,7 +56,7 @@ const ViewDetail = ({ open, handleClose }: ViewDetailInput) => {
               sx={{ cursor: 'pointer', position: 'absolute', top: 15, right: 20 }}
               onClick={handleClose}
             />
-            <div className='container mx-auto mt-6'>
+            <div className='container max-w-[1690px] mx-auto  mt-6'>
               <table className='w-full border-collapse'>
                 <thead>
                   <tr className='font-bold'>
