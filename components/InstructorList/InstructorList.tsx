@@ -7,6 +7,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
+import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined'
 import { useRouter } from 'next/navigation'
 import './styles.css'
 const InstructorList = () => {
@@ -145,6 +146,11 @@ const InstructorList = () => {
                   // onClick={() => handleDelete(tableMeta.rowData[0])}
                   >
                     <DeleteOutlineOutlinedIcon /> Delete
+                  </MenuItem>
+                  <MenuItem
+                  // onClick={() => handleDelete(tableMeta.rowData[0])}
+                  >
+                    <PaymentsOutlinedIcon sx={{ marginRight: '2px' }} /> Pay
                   </MenuItem>
                 </Menu>
               ) : (
