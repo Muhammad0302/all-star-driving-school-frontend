@@ -7,10 +7,16 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
+
 import { useRouter } from 'next/navigation'
 import './styles.css'
+import ViewDetail from './ViewDetail'
 const StudentList = () => {
   const [anchorEl, setAnchorEl] = useState(null)
+  const [openModal, setOpenModal] = useState(false)
+  const handleCloseFunc = () => setOpenModal(false)
+  const handleOpen = () => setOpenModal(true)
   const router = useRouter()
   const open = Boolean(anchorEl)
   const [activeRow, setActiveRow] = useState(null)
@@ -565,6 +571,14 @@ const StudentList = () => {
                   >
                     <DeleteOutlineOutlinedIcon /> Delete
                   </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleOpen()
+                      handleClose()
+                    }}
+                  >
+                    <RemoveRedEyeIcon /> View Detail
+                  </MenuItem>
                 </Menu>
               ) : (
                 ''
@@ -601,6 +615,7 @@ const StudentList = () => {
           Student list
         </div>
         <MUIDataTable title={''} data={data} columns={columns} options={options} />
+        <ViewDetail open={openModal} handleClose={handleCloseFunc} />
       </Box>
     </>
   )
