@@ -24,9 +24,9 @@ const style = {
   width: '90%',
   minHeight: '50%',
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: 'none',
   boxShadow: 24,
-  p: 4,
+  pt: 4,
 }
 interface ViewDetailInput {
   open: boolean
@@ -47,9 +47,7 @@ const ViewDetail = ({ open, handleClose }: ViewDetailInput) => {
       'Credit Card',
       'Book',
       '2022-01-15',
-      // '2022-01-20',
-      // '2022-01-25',
-      // '2022-01-30',
+
       '$3.50',
     ],
     [
@@ -65,9 +63,7 @@ const ViewDetail = ({ open, handleClose }: ViewDetailInput) => {
       'Cash',
       'Cash',
       '2022-01-16',
-      // '2022-01-21',
-      // '2022-01-26',
-      // '2022-01-31',
+
       '$7.50',
     ],
   ]
@@ -232,7 +228,38 @@ const ViewDetail = ({ open, handleClose }: ViewDetailInput) => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <MUIDataTable title={''} data={data} columns={columns} options={options} />
+            <div className='container mx-auto mt-8'>
+              <div className='flex font-bold py-2'>
+                <div className='flex-1 text-center'>Student Id</div>
+                <div className='flex-1 text-center'>Student Name</div>
+                <div className='flex-1 text-center'>Payment1</div>
+                <div className='flex-1 text-center'>Payment2</div>
+                <div className='flex-1 text-center'>Payment3</div>
+                <div className='flex-1 text-center'>Payment4</div>
+                <div className='flex-1 text-center'>Payment1 Method</div>
+                <div className='flex-1 text-center'>Payment2 Method</div>
+                <div className='flex-1 text-center'>Payment3 Method</div>
+                <div className='flex-1 text-center'>Payment4 Method</div>
+                <div className='flex-1 text-center'>Payment Type</div>
+                <div className='flex-1 text-center'>Payment1 Date</div>
+                <div className='flex-1 text-center'>Total Payments</div>
+              </div>
+              <div className='flex font-medium text-base leading-5 py-2'>
+                <div className='flex-1 text-center'>E24/12/2</div>
+                <div className='flex-1 text-center'>Jane Smith</div>
+                <div className='flex-1 text-center'>$1.50</div>
+                <div className='flex-1 text-center'>$1.75</div>
+                <div className='flex-1 text-center'>$2.00</div>
+                <div className='flex-1 text-center'>$2.25</div>
+                <div className='flex-1 text-center'>Cash</div>
+                <div className='flex-1 text-center'>Credit Card</div>
+                <div className='flex-1 text-center'>Debit Card</div>
+                <div className='flex-1 text-center'>Cash</div>
+                <div className='flex-1 text-center'>Cash</div>
+                <div className='flex-1 text-center'>2022-01-16</div>
+                <div className='flex-1 text-center'>$7.50</div>
+              </div>
+            </div>
           </Box>
         </Fade>
       </Modal>
