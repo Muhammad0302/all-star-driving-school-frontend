@@ -4,15 +4,19 @@ import MUIDataTable from 'mui-datatables'
 import { Button } from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
+import InputLabel from '@mui/material/InputLabel'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 import { useRouter } from 'next/navigation'
 import './styles.css'
 import ViewDetail from './ViewDetail'
 const StudentList = () => {
+  const [studentStatus, setStudentStatus] = useState('')
   const [anchorEl, setAnchorEl] = useState(null)
   const [openModal, setOpenModal] = useState(false)
   const handleCloseFunc = () => setOpenModal(false)
@@ -589,16 +593,56 @@ const StudentList = () => {
       },
     },
   ]
+
+  const handleStudentStatus = (event: any) => {
+    setStudentStatus(event.target.value)
+  }
   const HeaderElements = () => {
     return (
-      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddStudent}>
-        + Add Student
-      </Button>
+      <>
+        <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddStudent}>
+          + Add Student
+        </Button>
+      </>
     )
   }
+  const FilterElements = () => {
+    return (
+      <React.Fragment>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'left',
+            marginRight: '148px',
+          }}
+        >
+          <FormControl sx={{ m: 1, width: '218px' }} size='small'>
+            <InputLabel id='demo-select-small'>Select Student Status</InputLabel>
+            <Select
+              labelId='demo-select-small'
+              id='demo-select-small'
+              value={studentStatus}
+              label='Select Student Status'
+              onChange={handleStudentStatus}
+              MenuProps={{ PaperProps: { style: { maxHeight: '400px' } } }}
+            >
+              <MenuItem value=''>
+                <em>None</em>
+              </MenuItem>
+
+              <MenuItem value={'Completed Courses'}>Completed Courses</MenuItem>
+              <MenuItem value={'Expired Students'}>Expired Students</MenuItem>
+              <MenuItem value={'All Students'}>All Students</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+      </React.Fragment>
+    )
+  }
+
   const options = {
     filterType: 'checkbox' as const,
-    customToolbar: HeaderElements,
+    // customToolbar: HeaderElements,
     print: false,
     filter: false,
     headCells: {
@@ -606,6 +650,14 @@ const StudentList = () => {
         fontWeight: 'bold !important',
         color: 'black !important',
       },
+    },
+    customToolbar: () => {
+      return (
+        <React.Fragment>
+          <HeaderElements />
+          <FilterElements />
+        </React.Fragment>
+      )
     },
   }
   return (
