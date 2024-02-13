@@ -9,3 +9,9 @@
 .tss-178gktx-MUIDataTableHeadCell-contentWrapper {
   display: inline !important;
 }
+.tss-gm6zfk-MUIDataTableHeadCell-fixedHeader {
+  text-align: center !important;
+}
+.css-1ex1afd-MuiTableCell-root {
+  text-align: center !important;
+}
