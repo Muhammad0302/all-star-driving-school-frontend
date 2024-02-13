@@ -22,7 +22,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '87%',
+  width: '90%',
   minHeight: '25%',
   bgcolor: 'background.paper',
   border: 'none',
@@ -60,36 +60,36 @@ const ViewDetail = ({ open, handleClose }: ViewDetailInput) => {
               <table className='w-full border-collapse'>
                 <thead>
                   <tr className='font-bold'>
-                    <th className='border  py-2'>Student Id</th>
-                    <th className='border  py-2'>Student Name</th>
-                    <th className='border  py-2'>Payment1</th>
-                    <th className='border  py-2'>Payment2</th>
-                    <th className='border  py-2'>Payment3</th>
-                    <th className='border  py-2'>Payment4</th>
-                    <th className='border  py-2'>Payment1 Method</th>
-                    <th className='border  py-2'>Payment2 Method</th>
-                    <th className='border  py-2'>Payment3 Method</th>
-                    <th className='border  py-2'>Payment4 Method</th>
-                    <th className='border  py-2'>Payment Type</th>
-                    <th className='border  py-2'>Payment Date</th>
-                    <th className='border  py-2'>Total Payments</th>
+                    <th className='border  py-2'>Id</th>
+                    <th className='border  py-2'>Name</th>
+                    <th className='border  py-2'>Address</th>
+                    <th className='border  py-2'>Phone Number</th>
+                    <th className='border  py-2'>Dob</th>
+                    <th className='border  py-2'>License Number</th>
+                    <th className='border  py-2'>License Issue Date</th>
+                    <th className='border  py-2'>License Expiry Date</th>
+                    <th className='border  py-2'>Course Start Date</th>
+                    <th className='border  py-2'>Course Expiry Date</th>
+                    <th className='border  py-2'>Total Payments Received</th>
+                    <th className='border  py-2'>MTO Certification</th>
+                    <th className='border  py-2'>Score%</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className='font-medium'>
                     <td className='border  py-2 text-center'>E24/12/2</td>
                     <td className='border  py-2 text-center'>Jane Smith</td>
-                    <td className='border  py-2 text-center'>$1.50</td>
-                    <td className='border  py-2 text-center'>$1.75</td>
-                    <td className='border  py-2 text-center'>$2.00</td>
-                    <td className='border  py-2 text-center'>$2.25</td>
-                    <td className='border  py-2 text-center'>Cash</td>
-                    <td className='border  py-2 text-center'>Credit Card</td>
-                    <td className='border  py-2 text-center'>Debit Card</td>
-                    <td className='border  py-2 text-center'>Cash</td>
-                    <td className='border  py-2 text-center'>Cash</td>
-                    <td className='border  py-2 text-center'>2022-01-16</td>
-                    <td className='border  py-2 text-center'>$7.50</td>
+                    <td className='border  py-2 text-center'>890 Birch St</td>
+                    <td className='border  py-2 text-center'>888-5555</td>
+                    <td className='border  py-2 text-center'>20/4/1998</td>
+                    <td className='border  py-2 text-center'>I2345-67890-12345</td>
+                    <td className='border  py-2 text-center'>2021/08/12</td>
+                    <td className='border  py-2 text-center'>2026/08/12</td>
+                    <td className='border  py-2 text-center'>2026/10/15</td>
+                    <td className='border  py-2 text-center'>2027/10/15</td>
+                    <td className='border  py-2 text-center'>$450</td>
+                    <td className='border  py-2 text-center'>No</td>
+                    <td className='border  py-2 text-center'>75%</td>
                   </tr>
                 </tbody>
               </table>
