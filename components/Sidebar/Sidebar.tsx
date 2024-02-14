@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import AppBar from '@mui/material/AppBar'
@@ -24,6 +24,8 @@ import { useRouter } from 'next/navigation'
 const drawerWidth = 240
 
 const Sidebar = () => {
+  const [activeTab, setActiveTab] = useState('')
+
   const router = useRouter()
   const handleSiderNavigation = (itemText: string) => {
     if (itemText == 'Dashboard') {
@@ -43,7 +45,9 @@ const Sidebar = () => {
     } else if (itemText === 'report') {
       router.push('/report')
     }
+    setActiveTab(itemText)
   }
+  console.log('the tab value is:', activeTab)
   return (
     <>
       <Drawer
@@ -62,7 +66,11 @@ const Sidebar = () => {
         </div>
         <Box sx={{ overflow: 'auto', marginTop: '2rem' }}>
           <List>
-            <ListItem key='Dashboard' disablePadding>
+            <ListItem
+              key='Dashboard'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'Dashboard' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
                 <ListItemIcon>
                   <DashboardIcon />{' '}
@@ -70,7 +78,11 @@ const Sidebar = () => {
                 <ListItemText primary='Dashboard' />
               </ListItemButton>
             </ListItem>
-            <ListItem key='Instructors' disablePadding>
+            <ListItem
+              key='Instructors'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'instructors' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
                 <ListItemIcon>
                   <PeopleAltIcon />{' '}
@@ -78,7 +90,11 @@ const Sidebar = () => {
                 <ListItemText primary='Instructors' />
               </ListItemButton>
             </ListItem>
-            <ListItem key='Students' disablePadding>
+            <ListItem
+              key='Students'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'students' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('students')}>
                 <ListItemIcon>
                   <PeopleAltIcon />{' '}
@@ -89,7 +105,11 @@ const Sidebar = () => {
           </List>
 
           <List>
-            <ListItem key='payments' disablePadding>
+            <ListItem
+              key='payments'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'payments' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('payments')}>
                 <ListItemIcon>
                   <PaymentIcon />{' '}
@@ -100,7 +120,11 @@ const Sidebar = () => {
           </List>
           {/* <Divider /> */}
           <List>
-            <ListItem key='stdsasigndtoinstrs' disablePadding>
+            <ListItem
+              key='stdsasigndtoinstrs'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'stdsasigndtoinstrs' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('stdsasigndtoinstrs')}>
                 <ListItemIcon>
                   <AssignmentIcon />{' '}
@@ -110,7 +134,11 @@ const Sidebar = () => {
             </ListItem>
           </List>
           <List>
-            <ListItem key='stdsintrslssncompleted' disablePadding>
+            <ListItem
+              key='stdsintrslssncompleted'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'stdsintrslssncompleted' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('stdsintrslssncompleted')}>
                 <ListItemIcon>
                   <LibraryAddCheckIcon />{' '}
@@ -120,7 +148,11 @@ const Sidebar = () => {
             </ListItem>
           </List>
           <List>
-            <ListItem key='pvtlssnasgndtoinstrs' disablePadding>
+            <ListItem
+              key='pvtlssnasgndtoinstrs'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'pvtlssnasgndtoinstrs' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('pvtlssnasgndtoinstrs')}>
                 <ListItemIcon>
                   <AssignmentIcon />{' '}
@@ -131,7 +163,11 @@ const Sidebar = () => {
           </List>
 
           <List>
-            <ListItem key='report' disablePadding>
+            <ListItem
+              key='report'
+              disablePadding
+              sx={{ backgroundColor: activeTab === 'report' ? '#f23d4d' : '' }}
+            >
               <ListItemButton onClick={() => handleSiderNavigation('report')}>
                 <ListItemIcon>
                   <ReportIcon />{' '}
