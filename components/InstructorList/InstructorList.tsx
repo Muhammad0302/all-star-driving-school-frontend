@@ -10,7 +10,11 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined'
 import { useRouter } from 'next/navigation'
 import './styles.css'
+import PayModal from './PayModal'
 const InstructorList = () => {
+  const [openModal, setOpenModal] = useState(false)
+  const handleOpen = () => setOpenModal(true)
+  const handleCloseFunc = () => setOpenModal(false)
   const router = useRouter()
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -148,7 +152,10 @@ const InstructorList = () => {
                     <DeleteOutlineOutlinedIcon /> Delete
                   </MenuItem>
                   <MenuItem
-                  // onClick={() => handleDelete(tableMeta.rowData[0])}
+                    onClick={() => {
+                      handleOpen()
+                      handleClose()
+                    }}
                   >
                     <PaymentsOutlinedIcon sx={{ marginRight: '2px' }} /> Pay
                   </MenuItem>
@@ -191,6 +198,7 @@ const InstructorList = () => {
           Instructors list
         </div>
         <MUIDataTable title={''} data={data} columns={columns} options={options} />
+        <PayModal open={openModal} handleClose={handleCloseFunc} />
       </Box>
     </>
   )
