@@ -18,6 +18,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment'
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck'
 import Groups2Icon from '@mui/icons-material/Groups2'
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList'
+import ReportIcon from '@mui/icons-material/Report'
 import './styles.css'
 import { useRouter } from 'next/navigation'
 const drawerWidth = 240
@@ -39,6 +40,8 @@ const Sidebar = () => {
       router.push('/stdsintrslssncompleted')
     } else if (itemText === 'pvtlssnasgndtoinstrs') {
       router.push('/pvtlssnasgndtoinstrs')
+    } else if (itemText === 'report') {
+      router.push('/report')
     }
   }
   return (
@@ -123,6 +126,17 @@ const Sidebar = () => {
                   <AssignmentIcon />{' '}
                 </ListItemIcon>
                 <ListItemText primary='Private Lessons Assigned to Instrs' />
+              </ListItemButton>
+            </ListItem>
+          </List>
+
+          <List>
+            <ListItem key='report' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('report')}>
+                <ListItemIcon>
+                  <ReportIcon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Report' />
               </ListItemButton>
             </ListItem>
           </List>
