@@ -15,3 +15,9 @@
 .css-1ex1afd-MuiTableCell-root {
   text-align: center !important;
 }
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: #f23d4d !important;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: grey !important;
+}
