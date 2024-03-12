@@ -93,6 +93,42 @@ const ViewDetail = ({ open, handleClose }: ViewDetailInput) => {
                   </tr>
                 </tbody>
               </table>
+              <table className='w-[235px] border-collapse'>
+                <thead>
+                  <tr className='font-bold'>
+                    <th className='border  py-2'>Test Taken</th>
+                    <th className='border  py-2'>No of Lesson</th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                    <th className='border  py-2'></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className='font-medium'>
+                    <td className='border  py-2 text-center'>Yes</td>
+                    <td className='border  py-2 text-center'>18</td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                    <td className='border  py-2 text-center'></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </Box>
         </Fade>

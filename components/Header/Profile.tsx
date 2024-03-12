@@ -41,7 +41,7 @@ const Profile = () => {
         }}
         onClick={handleClick2}
       >
-        <Avatar src='/broken-image.jpg' style={{ cursor: 'pointer' }} />
+        <Avatar src='' style={{ cursor: 'pointer' }} />
       </IconButton>
 
       <Menu

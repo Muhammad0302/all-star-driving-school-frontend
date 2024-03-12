@@ -16,3 +16,6 @@
 .Mui-focused.MuiOutlinedInput-notchedOutline {
   border-color: #f23d4d !important;
 }
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  border-radius: 4px !important;
+}

@@ -37,25 +37,6 @@ const AddInstructor = () => {
         >
           <Grid item xs={12} sm={6}>
             <TextField
-              id='id'
-              name='id'
-              label='ID'
-              variant='outlined'
-              fullWidth
-              value={formik.values.id}
-              onChange={formik.handleChange}
-              error={formik.touched.id && Boolean(formik.errors.id)}
-              helperText={formik.touched.id && formik.errors.id}
-              sx={{
-                '& fieldset': { borderColor: '#f23d4d !important' },
-              }}
-              InputLabelProps={{
-                focused: false,
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
               id='name'
               name='name'
               label='Name'

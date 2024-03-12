@@ -11,7 +11,8 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-
+import HistoryIcon from '@mui/icons-material/History'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import './styles.css'
 import ViewDetail from './ViewDetail'
@@ -40,7 +41,7 @@ const StudentList = () => {
       'Eva Johnson',
       '890 Birch St',
       '888-5555',
-      '20/4/1998',
+      '20',
       'I2345-67890-12345',
       // '2021/08/12',
       // '2026/08/12',
@@ -60,7 +61,7 @@ const StudentList = () => {
       'Michael Smith',
       '123 Oak Ln',
       '777-1234',
-      '15/7/2000',
+      '15',
       'S9876-54321-09876',
       // '2021/09/15',
       // '2025/09/15',
@@ -80,7 +81,7 @@ const StudentList = () => {
       'Sophia Brown',
       '456 Maple St',
       '999-9876',
-      '25/12/1992',
+      '25',
       'B5678-01234-56789',
       // '2021/11/05',
       // '2026/11/05',
@@ -100,7 +101,7 @@ const StudentList = () => {
       'Daniel Wilson',
       '789 Cedar St',
       '555-6789',
-      '10/8/1995',
+      '10',
       'D4321-56789-01234',
       // '2022/01/10',
       // '2026/01/10',
@@ -120,7 +121,7 @@ const StudentList = () => {
       'Olivia Davis',
       '234 Pine St',
       '333-4444',
-      '5/6/1990',
+      '5',
       'O9876-54321-87654',
       // '2022/02/20',
       // '2027/02/20',
@@ -140,7 +141,7 @@ const StudentList = () => {
       'Aiden Taylor',
       '567 Oak Ln',
       '777-5678',
-      '18/9/1998',
+      '18',
       'A1234-56789-01234',
       // '2022/03/12',
       // '2026/03/12',
@@ -160,7 +161,7 @@ const StudentList = () => {
       'Mia Evans',
       '890 Cedar St',
       '999-6789',
-      '10/5/1992',
+      '10',
       'M5678-01234-56789',
       // '2022/04/18',
       // '2027/04/18',
@@ -180,7 +181,7 @@ const StudentList = () => {
       'Liam Turner',
       '123 Pine St',
       '555-1111',
-      '15/2/1994',
+      '15',
       'L3456-78901-23456',
       // '2022/05/20',
       // '2027/05/20',
@@ -200,7 +201,7 @@ const StudentList = () => {
       'Ava Robinson',
       '456 Maple St',
       '333-2222',
-      '8/12/1996',
+      '8',
       'A2345-67890-12345',
       // '2022/06/25',
       // '2027/06/25',
@@ -220,7 +221,7 @@ const StudentList = () => {
       'Ethan Hall',
       '789 Birch St',
       '777-2222',
-      '12/11/1993',
+      '12',
       'E5678-90123-45678',
       // '2022/07/10',
       // '2027/07/10',
@@ -240,7 +241,7 @@ const StudentList = () => {
       'Emma Adams',
       '234 Oak Ln',
       '999-3333',
-      '30/3/1997',
+      '30',
       'E9876-54321-09876',
       // '2022/08/15',
       // '2027/08/15',
@@ -260,7 +261,7 @@ const StudentList = () => {
       'Logan Turner',
       '567 Pine St',
       '555-4444',
-      '22/6/1995',
+      '22',
       'L4321-56789-01234',
       // '2022/09/20',
       // '2027/09/20',
@@ -280,7 +281,7 @@ const StudentList = () => {
       'Mila Wilson',
       '890 Maple St',
       '888-7777',
-      '14/10/1999',
+      '14',
       'M5678-90123-23456',
       // '2022/10/12',
       // '2027/10/12',
@@ -300,7 +301,7 @@ const StudentList = () => {
       'Owen Davis',
       '123 Cedar St',
       '777-9999',
-      '5/8/1991',
+      '5',
       'O8765-43210-56789',
       // '2022/11/05',
       // '2027/11/05',
@@ -320,7 +321,7 @@ const StudentList = () => {
       'Luna Evans',
       '456 Oak Ln',
       '555-6666',
-      '18/7/1994',
+      '18',
       'L9876-54321-87654',
       // '2022/12/10',
       // '2027/12/10',
@@ -340,7 +341,7 @@ const StudentList = () => {
       'Avery Robinson',
       '789 Cedar St',
       '999-6666',
-      '22/9/1992',
+      '22',
       'A1234-56789-01234',
       // '2023/01/18',
       // '2028/01/18',
@@ -360,7 +361,7 @@ const StudentList = () => {
       'Liam Adams',
       '234 Birch St',
       '333-8888',
-      '12/12/1997',
+      '12',
       'L9876-54321-87654',
       // '2023/02/12',
       // '2028/02/12',
@@ -380,7 +381,7 @@ const StudentList = () => {
       'Mila Turner',
       '567 Maple St',
       '555-3333',
-      '28/5/1996',
+      '28',
       'M5678-90123-23456',
       // '2023/03/10',
       // '2028/03/10',
@@ -400,7 +401,7 @@ const StudentList = () => {
       'Oliver Robinson',
       '890 Oak Ln',
       '999-3333',
-      '10/4/1993',
+      '10',
       'O2345-67890-12345',
       // '2023/04/18',
       // '2028/04/18',
@@ -420,7 +421,7 @@ const StudentList = () => {
       'Ella Adams',
       '123 Birch St',
       '777-4444',
-      '15/8/1995',
+      '15',
       'E5678-90123-45678',
       // '2023/05/20',
       // '2028/05/20',
@@ -471,8 +472,8 @@ const StudentList = () => {
       },
     },
     {
-      name: 'Dob',
-      label: 'Dob',
+      name: 'No of Lesson',
+      label: 'No of Lesson',
       options: {
         filter: true,
         sort: false,
@@ -527,8 +528,8 @@ const StudentList = () => {
       },
     },
     {
-      name: 'MTOCertification',
-      label: 'MTO Certification',
+      name: 'Test Taken',
+      label: 'Test Taken',
       options: {
         filter: true,
         sort: false,
@@ -583,6 +584,14 @@ const StudentList = () => {
                   >
                     <RemoveRedEyeIcon /> View Detail
                   </MenuItem>
+                  <MenuItem
+                  // onClick={() => {
+                  //   handleOpen()
+                  //   handleClose()
+                  // }}
+                  >
+                    <HistoryIcon /> Payment History
+                  </MenuItem>
                 </Menu>
               ) : (
                 ''
@@ -600,9 +609,11 @@ const StudentList = () => {
   const HeaderElements = () => {
     return (
       <>
-        <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddStudent}>
-          + Add Student
-        </Button>
+        <Link href='/addstudent' style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Button type='button' sx={{ color: '#f23d4d' }}>
+            + Add Student
+          </Button>
+        </Link>
       </>
     )
   }
