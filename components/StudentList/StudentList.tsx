@@ -16,12 +16,16 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import './styles.css'
 import ViewDetail from './ViewDetail'
+import PaymentHistory from './PaymentHistory'
 const StudentList = () => {
   const [studentStatus, setStudentStatus] = useState('')
   const [anchorEl, setAnchorEl] = useState(null)
   const [openModal, setOpenModal] = useState(false)
+  const [openModalPmntHstry, setOpenModalPmntHstry] = useState(false)
   const handleCloseFunc = () => setOpenModal(false)
+  const handleCloseFuncPmntHstry = () => setOpenModalPmntHstry(false)
   const handleOpen = () => setOpenModal(true)
+  const handleOpenPmntHstry = () => setOpenModalPmntHstry(true)
   const router = useRouter()
   const open = Boolean(anchorEl)
   const [activeRow, setActiveRow] = useState(null)
@@ -585,10 +589,10 @@ const StudentList = () => {
                     <RemoveRedEyeIcon /> View Detail
                   </MenuItem>
                   <MenuItem
-                  // onClick={() => {
-                  //   handleOpen()
-                  //   handleClose()
-                  // }}
+                    onClick={() => {
+                      handleOpenPmntHstry()
+                      handleClose()
+                    }}
                   >
                     <HistoryIcon /> Payment History
                   </MenuItem>
@@ -679,6 +683,7 @@ const StudentList = () => {
         </div>
         <MUIDataTable title={''} data={data} columns={columns} options={options} />
         <ViewDetail open={openModal} handleClose={handleCloseFunc} />
+        <PaymentHistory open={openModalPmntHstry} handleClose={handleCloseFuncPmntHstry} />
       </Box>
     </>
   )
