@@ -33,7 +33,7 @@ interface ViewDetailInput {
   open: boolean
   handleClose: () => void
 }
-
+// changes added
 const PaymentHistory = ({ open, handleClose }: ViewDetailInput) => {
   return (
     <div>
