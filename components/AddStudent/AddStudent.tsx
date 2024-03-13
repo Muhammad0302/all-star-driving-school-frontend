@@ -81,9 +81,9 @@ const AddStudent = () => {
                   <MenuItem value={'ahmad'}>Register For Online</MenuItem>
                 </Select>
 
-                {!!(formik.touched.studentName && formik.errors.studentName) && (
+                {!!(formik.touched.registration_for && formik.errors.registration_for) && (
                   <FormHelperText sx={{ color: '#d32f2f' }}>
-                    {formik.errors.studentName as string}
+                    {formik.errors.registration_for as string}
                   </FormHelperText>
                 )}
               </FormControl>
