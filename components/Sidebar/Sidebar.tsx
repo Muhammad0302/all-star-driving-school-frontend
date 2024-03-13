@@ -18,6 +18,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment'
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck'
 import Groups2Icon from '@mui/icons-material/Groups2'
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList'
+import Link from 'next/link'
 import ReportIcon from '@mui/icons-material/Report'
 import './styles.css'
 import { useRouter } from 'next/navigation'
@@ -28,23 +29,6 @@ const Sidebar = () => {
 
   const router = useRouter()
   const handleSiderNavigation = (itemText: string) => {
-    if (itemText == 'Dashboard') {
-      router.push('/')
-    } else if (itemText === 'instructors') {
-      router.push('/instructors')
-    } else if (itemText === 'students') {
-      router.push('/students')
-    } else if (itemText === 'payments') {
-      router.push('/payments')
-    } else if (itemText === 'stdsasigndtoinstrs') {
-      router.push('/stdsasigndtoinstrs')
-    } else if (itemText === 'stdsintrslssncompleted') {
-      router.push('/stdsintrslssncompleted')
-    } else if (itemText === 'pvtlssnasgndtoinstrs') {
-      router.push('/pvtlssnasgndtoinstrs')
-    } else if (itemText === 'report') {
-      router.push('/report')
-    }
     setActiveTab(itemText)
   }
   console.log('the tab value is:', activeTab)
@@ -66,115 +50,122 @@ const Sidebar = () => {
         </div>
         <Box sx={{ overflow: 'auto', marginTop: '2rem' }}>
           <List>
-            <ListItem
-              key='Dashboard'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'Dashboard' ? '#f23d4d' : '' }}
-            >
-              <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
-                <ListItemIcon>
-                  <DashboardIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Dashboard' />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              key='Instructors'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'instructors' ? '#f23d4d' : '' }}
-            >
-              <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
-                <ListItemIcon>
-                  <PeopleAltIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Instructors' />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              key='Students'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'students' ? '#f23d4d' : '' }}
-            >
-              <ListItemButton onClick={() => handleSiderNavigation('students')}>
-                <ListItemIcon>
-                  <PeopleAltIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Students' />
-              </ListItemButton>
-            </ListItem>
-          </List>
+            <Link href='/' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='Dashboard'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'Dashboard' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
+                  <ListItemIcon>
+                    <DashboardIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Dashboard' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/instructors' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='Instructors'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'instructors' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('instructors')}>
+                  <ListItemIcon>
+                    <PeopleAltIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Instructors' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/students' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='Students'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'students' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('students')}>
+                  <ListItemIcon>
+                    <PeopleAltIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Students' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/payments' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='payments'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'payments' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+                  <ListItemIcon>
+                    <PaymentIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Payments' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/stdsasigndtoinstrs' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='stdsasigndtoinstrs'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'stdsasigndtoinstrs' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('stdsasigndtoinstrs')}>
+                  <ListItemIcon>
+                    <AssignmentIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Students Assigned to Instructors' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
 
-          <List>
-            <ListItem
-              key='payments'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'payments' ? '#f23d4d' : '' }}
+            <Link
+              href='/stdsintrslssncompleted'
+              style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <ListItemButton onClick={() => handleSiderNavigation('payments')}>
-                <ListItemIcon>
-                  <PaymentIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Payments' />
-              </ListItemButton>
-            </ListItem>
-          </List>
-          {/* <Divider /> */}
-          <List>
-            <ListItem
-              key='stdsasigndtoinstrs'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'stdsasigndtoinstrs' ? '#f23d4d' : '' }}
-            >
-              <ListItemButton onClick={() => handleSiderNavigation('stdsasigndtoinstrs')}>
-                <ListItemIcon>
-                  <AssignmentIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Students Assigned to Instructors' />
-              </ListItemButton>
-            </ListItem>
-          </List>
-          <List>
-            <ListItem
-              key='stdsintrslssncompleted'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'stdsintrslssncompleted' ? '#f23d4d' : '' }}
-            >
-              <ListItemButton onClick={() => handleSiderNavigation('stdsintrslssncompleted')}>
-                <ListItemIcon>
-                  <LibraryAddCheckIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Students/Instructors Lessons Completed' />
-              </ListItemButton>
-            </ListItem>
-          </List>
-          <List>
-            <ListItem
-              key='pvtlssnasgndtoinstrs'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'pvtlssnasgndtoinstrs' ? '#f23d4d' : '' }}
-            >
-              <ListItemButton onClick={() => handleSiderNavigation('pvtlssnasgndtoinstrs')}>
-                <ListItemIcon>
-                  <AssignmentIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Private Lessons Assigned to Instrs' />
-              </ListItemButton>
-            </ListItem>
-          </List>
-
-          <List>
-            <ListItem
-              key='report'
-              disablePadding
-              sx={{ backgroundColor: activeTab === 'report' ? '#f23d4d' : '' }}
-            >
-              <ListItemButton onClick={() => handleSiderNavigation('report')}>
-                <ListItemIcon>
-                  <ReportIcon />{' '}
-                </ListItemIcon>
-                <ListItemText primary='Report' />
-              </ListItemButton>
-            </ListItem>
+              <ListItem
+                key='stdsintrslssncompleted'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'stdsintrslssncompleted' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('stdsintrslssncompleted')}>
+                  <ListItemIcon>
+                    <LibraryAddCheckIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Students/Instructors Lessons Completed' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/pvtlssnasgndtoinstrs' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='pvtlssnasgndtoinstrs'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'pvtlssnasgndtoinstrs' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('pvtlssnasgndtoinstrs')}>
+                  <ListItemIcon>
+                    <AssignmentIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Private Lessons Assigned to Instrs' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/report' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='report'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'report' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('report')}>
+                  <ListItemIcon>
+                    <ReportIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Report' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
           </List>
         </Box>
       </Drawer>

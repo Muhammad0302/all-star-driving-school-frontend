@@ -253,30 +253,23 @@ export default function Signin() {
                     alignItems: 'center',
                   }}
                 >
-                  <Button
-                    onClick={() => router.push('/password')}
-                    sx={{
-                      fontFamily: 'Hind Guntur',
-                      textTransform: 'capitalize',
-                      fontWeight: '500',
-                      fontSize: '18px',
-                      color: '#f23d4d',
-                      lineHeight: '34px',
-                      // marginRight: '70px',
-                      // marginLeft: {
-                      //   xs: '193px',
-                      //   sm: '362px',
-                      //   smm: '463px',
-                      //   md: '395px',
-                      //   lg: '458px',
-                      //   xl: '730px',
-                      // },
-                    }}
-                  >
-                    Forget password
-                  </Button>
+                  <Link href='/password' style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Button
+                      sx={{
+                        fontFamily: 'Hind Guntur',
+                        textTransform: 'capitalize',
+                        fontWeight: '500',
+                        fontSize: '18px',
+                        color: '#f23d4d',
+                        lineHeight: '34px',
+                      }}
+                    >
+                      Forget password
+                    </Button>
+                  </Link>
                 </Box>
               </FormControl>
+
               <Box
                 sx={{
                   display: 'flex',

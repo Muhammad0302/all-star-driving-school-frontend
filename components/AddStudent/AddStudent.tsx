@@ -7,6 +7,12 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
+import Box from '@mui/material/Box'
+import FormHelperText from '@mui/material/FormHelperText'
 import './styles.css'
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
@@ -20,6 +26,7 @@ const validationSchema = yup.object({
   totalPaymentsReceived: yup.string().required('Total Payments Received is required'),
   mtoCertification: yup.string().required('MTO Certification is required'),
   score: yup.string().required('Score is required'),
+  registration_for: yup.string().required('Registration type is required'),
 })
 const AddStudent = () => {
   const router = useRouter()
@@ -36,6 +43,7 @@ const AddStudent = () => {
       totalPaymentsReceived: '',
       mtoCertification: '',
       score: '',
+      registration_for: '',
     },
     validationSchema: validationSchema,
     onSubmit: async (values: any) => {
@@ -52,23 +60,34 @@ const AddStudent = () => {
           sx={{ marginTop: '5px !important', paddingLeft: '6rem', paddingRight: '6rem' }}
         >
           <Grid item xs={12} sm={6}>
-            <TextField
-              id='studentId'
-              name='studentId'
-              label='Student Id'
-              variant='outlined'
-              fullWidth
-              sx={{
-                '& fieldset': { borderColor: '#f23d4d !important' },
-              }}
-              InputLabelProps={{
-                focused: false,
-              }}
-              value={formik.values.studentId}
-              onChange={formik.handleChange}
-              error={formik.touched.studentId && Boolean(formik.errors.studentId)}
-              helperText={formik.touched.studentId && (formik.errors.studentId as any)}
-            />
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel
+                  id='demo-simple-select-label'
+                  error={formik.touched.registration_for && Boolean(formik.errors.registration_for)}
+                >
+                  Register For
+                </InputLabel>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={formik.values.registration_for}
+                  label='Student Name'
+                  onChange={(e) => {
+                    formik.setFieldValue('registration_for', e.target.value)
+                  }}
+                >
+                  <MenuItem value={'biden'}>Register For Onsite</MenuItem>
+                  <MenuItem value={'ahmad'}>Register For Online</MenuItem>
+                </Select>
+
+                {!!(formik.touched.studentName && formik.errors.studentName) && (
+                  <FormHelperText sx={{ color: '#d32f2f' }}>
+                    {formik.errors.studentName as string}
+                  </FormHelperText>
+                )}
+              </FormControl>
+            </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField

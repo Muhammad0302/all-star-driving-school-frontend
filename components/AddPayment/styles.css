@@ -7,3 +7,6 @@
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
   color: grey !important;
 }
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  border-radius: 4px !important;
+}
