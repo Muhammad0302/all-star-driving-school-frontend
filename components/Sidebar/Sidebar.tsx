@@ -18,6 +18,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment'
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck'
 import Groups2Icon from '@mui/icons-material/Groups2'
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList'
+import InventoryIcon from '@mui/icons-material/Inventory'
 import Link from 'next/link'
 import ReportIcon from '@mui/icons-material/Report'
 import './styles.css'
@@ -163,6 +164,20 @@ const Sidebar = () => {
                     <ReportIcon />{' '}
                   </ListItemIcon>
                   <ListItemText primary='Report' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/packages' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='Packages'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'Packages' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('Packages')}>
+                  <ListItemIcon>
+                    <InventoryIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Packages' />
                 </ListItemButton>
               </ListItem>
             </Link>
