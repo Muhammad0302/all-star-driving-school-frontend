@@ -103,7 +103,7 @@ const Sidebar = () => {
                   <ListItemIcon>
                     <PaymentIcon />{' '}
                   </ListItemIcon>
-                  <ListItemText primary='Payments' />
+                  <ListItemText primary='Students Payment' />
                 </ListItemButton>
               </ListItem>
             </Link>
@@ -161,9 +161,9 @@ const Sidebar = () => {
               >
                 <ListItemButton onClick={() => handleSiderNavigation('report')}>
                   <ListItemIcon>
-                    <ReportIcon />{' '}
+                    <PaymentIcon />{' '}
                   </ListItemIcon>
-                  <ListItemText primary='Report' />
+                  <ListItemText primary='Instructors Payment' />
                 </ListItemButton>
               </ListItem>
             </Link>
