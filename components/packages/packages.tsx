@@ -22,30 +22,26 @@ const Package = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const handleAssignInstructor = () => {
-    router.push('/assigninstructor')
+  const handleAddPackage = () => {
+    router.push('/addpackage')
   }
   const data = [
-    ['John Doe', '$50', '5 '],
-    ['Jane Smith', '$60', '6 '],
-    ['Alice Brown', '$55', '4 '],
-    ['Bob Johnson', '$70', '8 '],
-    ['Charlie Davis', '$65', '7 '],
-    ['Eva Thomas', '$45', '3 '],
-    ['Frank Miller', '$75', '9 '],
-    ['Grace Wilson', '$80', '10 '],
-    ['Harry Lee', '$55', '4 '],
-    ['Ivy Turner', '$60', '6 '],
-    ['Jack Evans', '$70', '8 '],
-    ['Katherine Hall', '$50', '5 '],
-    ['Liam Brooks', '$65', '7 '],
-    ['Mia Taylor', '$45', '3 '],
-    ['Noah Adams', '$75', '9 '],
-    ['Olivia Clark', '$80', '10 '],
-    ['Peter Brown', '$55', '4 '],
-    ['Quinn Evans', '$60', '6 '],
-    ['Rachel Turner', '$70', '8 '],
-    ['Samuel Lee', '$50', '5 '],
+    ['Package #1', '$589', '9 '],
+    ['Package #2 ', '$739', '13 '],
+    ['Package #3 ', '$895', '12 '],
+    ['Package #2 (Online)', '$739', '16 '],
+    ['Package #3 (Online)', '$895', '15 '],
+    ['1 Hour Lesson', '$50', '1 Hour Lesson'],
+    ['2 Hours And Road Test', '$200', '2 Hours And Road Test '],
+    ['3 Hours Lesson + Road Test', '$250', '3 Hours Lesson + Road Test '],
+    ['4 Hours Lesson + Road Test', '$300', '4 Hours Lesson + Road Test '],
+    ['5 hour lesson + Road Test', '$330', '5 hour lesson + Road Test '],
+    ['10 hour lesson + Road Test', '$550', '10 hour lesson + Road Test '],
+    ['1 Hour Lesson', '$60', '1 Hour Lesson '],
+    ['2 Hours And Road Test', '$250', '2 Hours And Road Test '],
+    ['3 Hours Lesson + Road Test', '$300', '3 Hours Lesson + Road Test '],
+    ['4 Hours Lesson + Road Test', '$360', '4 Hours Lesson + Road Test '],
+    ['5 hour lesson + Road Test', '$400', '5 hour lesson + Road Test '],
   ]
 
   const columns = [
@@ -98,7 +94,7 @@ const Package = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem onClick={handleAssignInstructor}>
+                  <MenuItem onClick={handleAddPackage}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -119,8 +115,8 @@ const Package = () => {
 
   const HeaderElements = () => {
     return (
-      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAssignInstructor}>
-        + Assign Instructor
+      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddPackage}>
+        + Add Package
       </Button>
     )
   }
