@@ -93,20 +93,7 @@ const Sidebar = () => {
                 </ListItemButton>
               </ListItem>
             </Link>
-            <Link href='/payments' style={{ textDecoration: 'none', color: 'inherit' }}>
-              <ListItem
-                key='payments'
-                disablePadding
-                sx={{ backgroundColor: activeTab === 'payments' ? '#f23d4d' : '' }}
-              >
-                <ListItemButton onClick={() => handleSiderNavigation('payments')}>
-                  <ListItemIcon>
-                    <PaymentIcon />{' '}
-                  </ListItemIcon>
-                  <ListItemText primary='Students Payment' />
-                </ListItemButton>
-              </ListItem>
-            </Link>
+
             <Link href='/stdsasigndtoinstrs' style={{ textDecoration: 'none', color: 'inherit' }}>
               <ListItem
                 key='stdsasigndtoinstrs'
@@ -150,6 +137,20 @@ const Sidebar = () => {
                     <AssignmentIcon />{' '}
                   </ListItemIcon>
                   <ListItemText primary='Private Lessons Assigned to Instrs' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/payments' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='payments'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'payments' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+                  <ListItemIcon>
+                    <PaymentIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Students Payment' />
                 </ListItemButton>
               </ListItem>
             </Link>

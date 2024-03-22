@@ -238,21 +238,21 @@ const AddStudent = () => {
           <Grid item xs={12} sm={3}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={['DatePicker']}>
-                <DatePicker label='License Issue Date' />
+                <DatePicker label='License Issue Date' format='DD/MM/YYYY' />
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
           <Grid item xs={12} sm={3}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={['DatePicker']}>
-                <DatePicker label='License Expiry Date' />
+                <DatePicker label='License Expiry Date' format='DD/MM/YYYY' />
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
           <Grid item xs={12} sm={3}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={['DatePicker']}>
-                <DatePicker label='Course Start Date' />
+                <DatePicker label='Course Start Date' format='DD/MM/YYYY' />
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
