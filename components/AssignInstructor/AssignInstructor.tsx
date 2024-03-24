@@ -46,42 +46,6 @@ const AssignInstructor = () => {
               <FormControl fullWidth>
                 <InputLabel
                   id='demo-simple-select-label'
-                  error={formik.touched.studentId && Boolean(formik.errors.studentId)}
-                >
-                  Student ID
-                </InputLabel>
-                <Select
-                  labelId='demo-simple-select-label'
-                  id='demo-simple-select'
-                  value={formik.values.studentId}
-                  label='Student ID'
-                  onChange={(e) => {
-                    formik.setFieldValue('studentId', e.target.value)
-                  }}
-                >
-                  <MenuItem value={'I24/12/1'}>I24/12/1</MenuItem>
-                  <MenuItem value={'E24/12/2'}>E24/12/2</MenuItem>
-                  <MenuItem value={'I24/12/3'}>I24/12/3</MenuItem>
-                  <MenuItem value={'I24/12/4'}>I24/12/4</MenuItem>
-                  <MenuItem value={'I24/12/5'}>I24/12/5</MenuItem>
-                  <MenuItem value={'E24/12/6'}>E24/12/6</MenuItem>
-                  <MenuItem value={'E24/12/7'}>E24/12/7</MenuItem>
-                  <MenuItem value={'E24/12/8'}>E24/12/8</MenuItem>
-                  <MenuItem value={'E24/12/9'}>E24/12/9</MenuItem>
-                </Select>
-                {formik.touched.studentId && Boolean(formik.errors.studentId) && (
-                  <FormHelperText sx={{ color: '#d32f2f' }}>
-                    {formik.errors.studentId}
-                  </FormHelperText>
-                )}
-              </FormControl>
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel
-                  id='demo-simple-select-label'
                   error={formik.touched.studentName && Boolean(formik.errors.studentName)}
                 >
                   Student Name
