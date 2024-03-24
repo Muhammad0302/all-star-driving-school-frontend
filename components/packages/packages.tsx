@@ -9,7 +9,7 @@ import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutl
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import { useRouter } from 'next/navigation'
 import './styles.css'
-const StdsIntrsLssnCompleted = () => {
+const Package = () => {
   const router = useRouter()
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -22,77 +22,48 @@ const StdsIntrsLssnCompleted = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const handleAddLessonCompletion = () => {
-    router.push('/addlessoncompletion')
+  const handleAddPackage = () => {
+    router.push('/addpackage')
   }
   const data = [
-    ['Instructor 1', 'I24/12/1', 'John Doe', '2', '10', 'Yes'],
-    ['Instructor 2', 'I24/12/2', 'Jane Smith', '3', '8', 'No'],
-    ['Instructor 3', 'I24/12/3', 'Alice Brown', '2', '12', 'Yes'],
-    ['Instructor 4', 'I24/12/4', 'Bob Johnson', '1', '15', 'No'],
-    ['Instructor 5', 'I24/12/5', 'Charlie Davis', '1', '18', 'Yes'],
-    ['Instructor 6', 'I24/12/6', 'Eva Thomas', '1', '20', 'No'],
-    ['Instructor 7', 'I24/12/7', 'Frank Miller', '2', '22', 'Yes'],
-    ['Instructor 8', 'I24/12/8', 'Grace Wilson', '2', '25', 'No'],
-    ['Instructor 9', 'I24/12/9', 'Harry Lee', '2', '28', 'Yes'],
-    ['Instructor 10', 'I24/12/10', 'Ivy Turner', '3', '30', 'No'],
-    ['Instructor 11', 'I24/12/11', 'Jack Evans', '2', '32', 'Yes'],
-    ['Instructor 12', 'E24/12/12', 'Katherine Hall', '1', '35', 'No'],
-    ['Instructor 13', 'E24/12/13', 'Liam Brooks', '1', '38', 'Yes'],
-    ['Instructor 14', 'E24/12/14', 'Mia Taylor', '$13.50', '$13.75', '$14.00', '40', 'No'],
-    ['Instructor 15', 'E24/12/15', 'Noah Adams', '$14.50', '$14.75', '$15.00', '42', 'Yes'],
-    ['Instructor 16', 'E24/12/16', 'Olivia Clark', '2', '45', 'No'],
-    ['Instructor 17', 'E24/12/17', 'Peter Brown', '3', '48', 'Yes'],
-    ['Instructor 18', 'E24/12/18', 'Quinn Evans', '$17.50', '$17.75', '$18.00', '50', 'No'],
-    ['Instructor 19', 'E24/12/9', 'Rachel Turner', '3', '52', 'Yes'],
-    ['Instructor 20', 'E24/12/20', 'Samuel Lee', '$19.50', '$19.75', '$20.00', '55', 'No'],
+    ['Package #1', '$589', '9 '],
+    ['Package #2 ', '$739', '13 '],
+    ['Package #3 ', '$895', '12 '],
+    ['Package #2 (Online)', '$739', '16 '],
+    ['Package #3 (Online)', '$895', '15 '],
+    ['1 Hour Lesson', '$50', '1 Hour Lesson'],
+    ['2 Hours And Road Test', '$200', '2 Hours And Road Test '],
+    ['3 Hours Lesson + Road Test', '$250', '3 Hours Lesson + Road Test '],
+    ['4 Hours Lesson + Road Test', '$300', '4 Hours Lesson + Road Test '],
+    ['5 hour lesson + Road Test', '$330', '5 hour lesson + Road Test '],
+    ['10 hour lesson + Road Test', '$550', '10 hour lesson + Road Test '],
+    ['1 Hour Lesson', '$60', '1 Hour Lesson '],
+    ['2 Hours And Road Test', '$250', '2 Hours And Road Test '],
+    ['3 Hours Lesson + Road Test', '$300', '3 Hours Lesson + Road Test '],
+    ['4 Hours Lesson + Road Test', '$360', '4 Hours Lesson + Road Test '],
+    ['5 hour lesson + Road Test', '$400', '5 hour lesson + Road Test '],
   ]
 
   const columns = [
     {
-      name: 'InstructorName',
-      label: 'Instructor Name',
+      name: 'Name',
+      label: 'Name',
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: 'Price',
+      label: 'Price',
       options: {
         filter: true,
         sort: false,
       },
     },
     {
-      name: 'StudentID',
-      label: 'Student ID',
-      options: {
-        filter: true,
-        sort: false,
-      },
-    },
-    {
-      name: 'StudentName',
-      label: 'Student Name',
-      options: {
-        filter: true,
-        sort: false,
-      },
-    },
-    {
-      name: 'Package',
-      label: 'Package',
-      options: {
-        filter: true,
-        sort: false,
-      },
-    },
-
-    {
-      name: 'LessonsCompleted',
-      label: 'Lessons Completed',
-      options: {
-        filter: true,
-        sort: false,
-      },
-    },
-    {
-      name: 'RoadTestCompleted',
-      label: 'Road Test Completed',
+      name: 'NoOfLessons',
+      label: 'No. of Lessons',
       options: {
         filter: true,
         sort: false,
@@ -123,7 +94,7 @@ const StdsIntrsLssnCompleted = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem onClick={handleAddLessonCompletion}>
+                  <MenuItem onClick={handleAddPackage}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -144,8 +115,8 @@ const StdsIntrsLssnCompleted = () => {
 
   const HeaderElements = () => {
     return (
-      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddLessonCompletion}>
-        + Add Lesson Completion
+      <Button type='button' sx={{ color: '#f23d4d' }} onClick={handleAddPackage}>
+        + Add Package
       </Button>
     )
   }
@@ -166,7 +137,7 @@ const StdsIntrsLssnCompleted = () => {
     <>
       <Box sx={{ padding: '24px' }}>
         <div className='mt-10 mb-[1rem] text-[20x] sm:text-[19px] md:text-[23px] lg:text-[26px] text-center font-russoone font-normal'>
-          Students/Instructors Lessons Completion List
+          Packages
         </div>
         <MUIDataTable title={''} data={data} columns={columns} options={options} />
       </Box>
@@ -174,4 +145,4 @@ const StdsIntrsLssnCompleted = () => {
   )
 }
 
-export default StdsIntrsLssnCompleted
+export default Package

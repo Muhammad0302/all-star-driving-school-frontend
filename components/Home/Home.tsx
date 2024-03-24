@@ -11,12 +11,12 @@ const Home = () => {
       <Box sx={{ padding: '24px', marginTop: '2.5rem' }}>
         <FeatureInfo />
         <Chart data={userData} title='Student Analytics' grid dataKey='Active Student' />
-        <Chart
+        {/* <Chart
           data={instructorData}
           title='Instructor Analytics'
           grid
           dataKey='Active Instructor'
-        />
+        /> */}
       </Box>
     </>
   )

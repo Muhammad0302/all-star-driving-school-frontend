@@ -18,6 +18,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment'
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck'
 import Groups2Icon from '@mui/icons-material/Groups2'
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList'
+import InventoryIcon from '@mui/icons-material/Inventory'
 import Link from 'next/link'
 import ReportIcon from '@mui/icons-material/Report'
 import './styles.css'
@@ -92,20 +93,7 @@ const Sidebar = () => {
                 </ListItemButton>
               </ListItem>
             </Link>
-            <Link href='/payments' style={{ textDecoration: 'none', color: 'inherit' }}>
-              <ListItem
-                key='payments'
-                disablePadding
-                sx={{ backgroundColor: activeTab === 'payments' ? '#f23d4d' : '' }}
-              >
-                <ListItemButton onClick={() => handleSiderNavigation('payments')}>
-                  <ListItemIcon>
-                    <PaymentIcon />{' '}
-                  </ListItemIcon>
-                  <ListItemText primary='Payments' />
-                </ListItemButton>
-              </ListItem>
-            </Link>
+
             <Link href='/stdsasigndtoinstrs' style={{ textDecoration: 'none', color: 'inherit' }}>
               <ListItem
                 key='stdsasigndtoinstrs'
@@ -152,6 +140,20 @@ const Sidebar = () => {
                 </ListItemButton>
               </ListItem>
             </Link>
+            <Link href='/payments' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='payments'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'payments' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('payments')}>
+                  <ListItemIcon>
+                    <PaymentIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Students Payment' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
             <Link href='/report' style={{ textDecoration: 'none', color: 'inherit' }}>
               <ListItem
                 key='report'
@@ -160,9 +162,23 @@ const Sidebar = () => {
               >
                 <ListItemButton onClick={() => handleSiderNavigation('report')}>
                   <ListItemIcon>
-                    <ReportIcon />{' '}
+                    <PaymentIcon />{' '}
                   </ListItemIcon>
-                  <ListItemText primary='Report' />
+                  <ListItemText primary='Instructors Payment' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link href='/packages' style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ListItem
+                key='Packages'
+                disablePadding
+                sx={{ backgroundColor: activeTab === 'Packages' ? '#f23d4d' : '' }}
+              >
+                <ListItemButton onClick={() => handleSiderNavigation('Packages')}>
+                  <ListItemIcon>
+                    <InventoryIcon />{' '}
+                  </ListItemIcon>
+                  <ListItemText primary='Packages' />
                 </ListItemButton>
               </ListItem>
             </Link>
